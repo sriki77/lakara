@@ -11,17 +11,70 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140301083228) do
+ActiveRecord::Schema.define(version: 20140304134603) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "users", force: true do |t|
-    t.string   "email"
+  create_table "dhatus", force: true do |t|
     t.string   "name"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "lakaras", force: true do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "lakaras", ["name"], name: "index_lakaras_on_name", unique: true, using: :btree
+
+  create_table "padams", force: true do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "padams", ["name"], name: "index_padams_on_name", unique: true, using: :btree
+
+  create_table "purushas", force: true do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "purushas", ["name"], name: "index_purushas_on_name", unique: true, using: :btree
+
+  create_table "roopas", force: true do |t|
+    t.string   "name",        null: false
+    t.integer  "dhatu_id"
+    t.integer  "purusha_id"
+    t.integer  "vachanam_id"
+    t.integer  "lakaras_id"
+    t.integer  "padam_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "dhatus_id"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "email",           null: false
+    t.string   "name",            null: false
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+
+  create_table "vachanams", force: true do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "vachanams", ["name"], name: "index_vachanams_on_name", unique: true, using: :btree
 
 end
