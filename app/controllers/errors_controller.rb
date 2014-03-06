@@ -1,5 +1,5 @@
 class ErrorsController < ApplicationController
   def routing
-    render_with 404, "Invalid Resource"
+    redirect_to root_path
   end
 end
