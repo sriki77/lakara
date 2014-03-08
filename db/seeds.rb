@@ -8,7 +8,7 @@
 Padam.delete_all
 Padam.create!([{name: 'परस्मैपदम्'},{name: 'आत्मनेपदम्'}]);
 Vachanam.delete_all
-Vachanam.create!([{name: 'ऐकवचनम्'},{name: 'द्विवचनम्'},{name: 'बहुवचनम'}]);
+Vachanam.create!([{name: 'एकवचनम्'},{name: 'द्विवचनम्'},{name: 'बहुवचनम'}]);
 Purusha.delete_all
 Purusha.create!([{name: 'प्रथमपुरुष:'},{name: 'मध्यमपुरुष:'},{name: 'उत्तमपुरुष:'}]);
 Lakaras.delete_all

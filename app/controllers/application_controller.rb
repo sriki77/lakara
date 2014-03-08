@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   private
 
+
+
   def render_with (code, msg)
     render :text => msg, :status => code
   end

@@ -11,15 +11,20 @@ describe RoopasController do
   context "Validate Roopas Show Action" do
 
     it "should return to root path" do
-      get :show, {:id=>''}
-      expect(response).to redirect_to(root_path)
-      get :show, {:id=>'abcd'}
-      expect(response).to redirect_to(root_path)
+      get :show, {:r => '', :format => :json}
+      expect(response).to render_template(root_path)
+      get :show, {:r => 'abcd',:format => :json}
+      expect(response).to render_template(root_path)
     end
 
     it "should return roopas description and details" do
-      get :show, {:id=>'मोदते'}
-      expect(response).to render_template(:show)
+      get :show, {:r => 'मोदते',:format => :json}
+      expect(response).to render_template(root_path)
+    end
+
+    it "should support only JSON Format" do
+      get :show, {:r => 'भवति'}
+      response.body.should=="Only JSON format supported"
     end
 
   end

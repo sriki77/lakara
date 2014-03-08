@@ -26,6 +26,6 @@ describe Dhatu do
       Lakaras.all.length.should==10
       Purusha.all.length.should==3
       Vachanam.all.length.should==3
-    end
+      end
   end
 end

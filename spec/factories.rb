@@ -22,12 +22,27 @@ FactoryGirl.define do
     end
   end
 
+  factory :bhu_dhatu_with_roopas, class: Dhatu do
+    name "भू"
+    after(:build) do |d|
+      d.roopas = [FactoryGirl.build(:bhava_roopa), FactoryGirl.build(:bhavata_roopa)]
+    end
+  end
+
   factory :bhava_roopa, class: Roopa do
     name "भवति"
     association :padam, factory: :p_padam, strategy: :build
     association :lakaras, factory: :lat_lakara, strategy: :build
     association :vachanam, factory: :yeka_vachana, strategy: :build
     association :purusha, factory: :p_purusha, strategy: :build
+  end
+
+  factory :bhavata_roopa, class: Roopa do
+    name "भवत"
+    association :padam, factory: :p_padam, strategy: :build
+    association :lakaras, factory: :lot_lakara, strategy: :build
+    association :vachanam, factory: :bahu_vachana, strategy: :build
+    association :purusha, factory: :m_purusha, strategy: :build
   end
 
   factory :moda_roopa, class: Roopa do
@@ -53,13 +68,28 @@ FactoryGirl.define do
     initialize_with { Lakaras.find_by_name(name)}
   end
 
+  factory :lot_lakara, class: Lakaras do
+    name "लोट्"
+    initialize_with { Lakaras.find_by_name(name)}
+  end
+
   factory :yeka_vachana, class: Vachanam do
-    name "ऐकवचनम्"
+    name "एकवचनम्"
+    initialize_with { Vachanam.find_by_name(name)}
+  end
+
+  factory :bahu_vachana, class: Vachanam do
+    name "बहुवचनम"
     initialize_with { Vachanam.find_by_name(name)}
   end
 
   factory :p_purusha, class: Purusha do
     name "प्रथमपुरुष:"
+    initialize_with { Purusha.find_by_name(name)}
+  end
+
+  factory :m_purusha, class: Purusha do
+    name "मध्यमपुरुष:"
     initialize_with { Purusha.find_by_name(name)}
   end
 

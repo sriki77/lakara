@@ -1,5 +1,5 @@
 class ErrorsController < ApplicationController
   def routing
-    redirect_to root_path
+    render :text => "Invalid Resource"
   end
 end

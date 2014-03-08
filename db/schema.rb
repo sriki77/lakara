@@ -56,7 +56,6 @@ ActiveRecord::Schema.define(version: 20140304134603) do
     t.integer  "padam_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "dhatus_id"
   end
 
   create_table "users", force: true do |t|
