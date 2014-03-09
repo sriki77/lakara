@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>धतुरूपाणि </title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+</head>
+<body>
+<div id="header" align="center">
+  <h1 align="center">धतुरूपाणि </h1>
+
+  <h2 align="center">भ्वद्यादिजुहोत्यादि: दिवादि:स्वादिरेव च |</h2>
+
+  <h2 align="center"> तुदादिश्च रुधादिश्च तन:क्र्यादिचुरदय: ||</h2>
+
+  <div align="center">
+    <table cellpadding="5" width="90%" border="0">
+      <tr>
+        <th align="center" colspan="3"><font size="+5"><%= @dhatu.name + " "+ ApplicationHelper::DHATU %></font><br/>
+          <%= link_to 'Back', dhatus_path %>
+          <%= link_to "Edit", edit_dhatu_path(@dhatu) %>
+        </th>
+      </tr>
+      <tr>
+        <td align="left" colspan="3"><%= @dhatu.description %></td>
+      </tr>
+      <tr>
+        <% Lakaras.all.each_with_index do |l, i| %>
+            <td align="center">
+              <b><%= l.name + " " + ApplicationHelper::LAKARA %> <br/></b>
+              <table border="1" cellpadding="3" width="100%">
+                <tr>
+                  <th>-</th>
+                  <% Vachanam.all.each do |v| %>
+                      <td align="center"><i> <%= v.name %></i></td>
+                  <% end %>
+                </tr>
+                <% Purusha.all.each do |p| %>
+                    <tr>
+                      <td align="center"><i><%= p.name %></i></td>
+                      <% Vachanam.all.each do |v| %>
+                          <% r=@dhatu.roopas.find { |r| r.lakaras==l && r.purusha==p && r.vachanam==v } %>
+                          <td align="center"><%= r ? r.name : "-" %></td>
+                      <% end %>
+                    </tr>
+                <% end %>
+              </table>
+            </td>
+            <% if (i+1)%3==0 %>
+                </tr>
+                <tr>
+            <% end %>
+        <% end %>
+        </tr>
+        </table>
+  </div>
+</div>
+</body>
+</html>
+

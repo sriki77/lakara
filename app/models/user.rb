@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  strip_attributes
   validates_presence_of :email, :name
   validates_length_of :email, :name, :within => 3..20
   validates_uniqueness_of :email

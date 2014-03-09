@@ -1,6 +1,6 @@
 if @roopa
   json.roopa @roopa.name
-  json.desc "#{@roopa.dhatu.name} #{ApplicationHelper::DHATU} #{@roopa.padam.name} #{@roopa.lakaras.name} #{ApplicationHelper::LAKARA} #{@roopa.purusha.name} #{@roopa.vachanam.name}"
+  json.desc "#{@roopa.dhatu.name} #{ApplicationHelper::DHATU} #{@roopa.dhatu.padam.name} #{@roopa.lakaras.name} #{ApplicationHelper::LAKARA} #{@roopa.purusha.name} #{@roopa.vachanam.name}"
 
   dhatu=@roopa.dhatu
   json.lakaras Lakaras.all do |l|

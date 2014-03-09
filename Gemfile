@@ -42,6 +42,8 @@ gem "active_model_serializers"
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.1.2'
 
+gem 'strip_attributes'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

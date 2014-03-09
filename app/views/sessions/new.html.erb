@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>धतुरूपाणि </title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+</head>
+<body>
+<div id="header" align="center">
+  <h1 align="center">धतुरूपाणि </h1>
+
+  <h2 align="center">भ्वद्यादिजुहोत्यादि: दिवादि:स्वादिरेव च |</h2>
+
+  <h2 align="center"> तुदादिश्च रुधादिश्च तन:क्र्यादिचुरदय: ||</h2>
+
+  <div align="center">
+    <%= form_tag login_path do %>
+        <table width="25%" class="thin_table">
+          <tr>
+            <th colspan="2" align="center">
+              <span class="heading">Log in</span>
+            </th>
+          </tr>
+          <tr>
+            <td><%= label_tag :email %></td>
+            <td><%= text_field_tag :email, params[:email] %></td>
+          </tr>
+          <tr>
+            <td><%= label_tag :password %></td>
+            <td><%= password_field_tag :password %></td>
+          </tr>
+          <tr>
+            <td align="center"> <%= link_to "Sign Up", signup_path %></td>
+            <td align="center"><%= submit_tag "Log in" %></td>
+          </tr>
+        </table>
+    <% end %>
+  </div>
+
+</div>
+
+</body>
+</html>
+
+

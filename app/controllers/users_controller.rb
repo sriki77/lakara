@@ -1,18 +1,17 @@
 class UsersController < ApplicationController
-  before_filter :authorize, :except => :create
+
+  def new
+    @user=User.new
+  end
 
   def create
-
-    return render_with 400, "Invalid Request" unless params[:user]
-
     @user = User.new(user_params)
-
     if @user.save
-      render_msg @user.email
+      session[:user_id]=@user.id
+      redirect_to dhatus_url, notice: "Thank you for signing up!"
     else
-      render_with 403, "#{@user.errors.to_json} "
+      render new_user_path
     end
-
   end
 
 

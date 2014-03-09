@@ -1,8 +1,13 @@
 class Roopa < ActiveRecord::Base
-  validates_presence_of :name
+  strip_attributes
+
   belongs_to :purusha
   belongs_to :vachanam
-  belongs_to :padam
   belongs_to :lakaras
   belongs_to :dhatu
+
+  def lakaras_id=(id)
+    self.lakaras=Lakaras.find(id)
+  end
+
 end

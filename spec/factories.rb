@@ -1,7 +1,7 @@
 require 'factory_girl'
 
 FactoryGirl.define do
-  factory :user do
+  factory :users do
     name "Srikanth"
     email "a@a.com"
     password "abc123"
@@ -10,6 +10,7 @@ FactoryGirl.define do
 
   factory :dhatu_with_one_roopa, class: Dhatu do
     name "भ"
+    association :padam, factory: :p_padam, strategy: :build
     after(:build) do |d|
       d.roopas = [FactoryGirl.build(:bhava_roopa)]
     end
@@ -17,6 +18,7 @@ FactoryGirl.define do
 
   factory :dhatu_with_two_roopas, class: Dhatu do
     name "मो"
+    association :padam, factory: :a_padam, strategy: :build
     after(:build) do |d|
       d.roopas = [FactoryGirl.build(:bhava_roopa),FactoryGirl.build(:moda_roopa)]
     end
@@ -24,6 +26,7 @@ FactoryGirl.define do
 
   factory :bhu_dhatu_with_roopas, class: Dhatu do
     name "भू"
+    association :padam, factory: :p_padam, strategy: :build
     after(:build) do |d|
       d.roopas = [FactoryGirl.build(:bhava_roopa), FactoryGirl.build(:bhavata_roopa)]
     end
@@ -31,7 +34,6 @@ FactoryGirl.define do
 
   factory :bhava_roopa, class: Roopa do
     name "भवति"
-    association :padam, factory: :p_padam, strategy: :build
     association :lakaras, factory: :lat_lakara, strategy: :build
     association :vachanam, factory: :yeka_vachana, strategy: :build
     association :purusha, factory: :p_purusha, strategy: :build
@@ -39,7 +41,6 @@ FactoryGirl.define do
 
   factory :bhavata_roopa, class: Roopa do
     name "भवत"
-    association :padam, factory: :p_padam, strategy: :build
     association :lakaras, factory: :lot_lakara, strategy: :build
     association :vachanam, factory: :bahu_vachana, strategy: :build
     association :purusha, factory: :m_purusha, strategy: :build
@@ -47,7 +48,6 @@ FactoryGirl.define do
 
   factory :moda_roopa, class: Roopa do
     name "मोदते"
-    association :padam, factory: :a_padam, strategy: :build
     association :lakaras, factory: :lat_lakara, strategy: :build
     association :vachanam, factory: :yeka_vachana, strategy: :build
     association :purusha, factory: :p_purusha, strategy: :build

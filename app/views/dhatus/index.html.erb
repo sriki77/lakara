@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>धतुरूपाणि </title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+</head>
+<body>
+<div id="header" align="center">
+  <h1 align="center">धतुरूपाणि </h1>
+
+  <h2 align="center">भ्वद्यादिजुहोत्यादि: दिवादि:स्वादिरेव च |</h2>
+
+  <h2 align="center"> तुदादिश्च रुधादिश्च तन:क्र्यादिचुरदय: ||</h2>
+
+  <div align="center">
+    <%= link_to "New #{ApplicationHelper::DHATU}", new_dhatu_path %>
+    <table border="1" cellpadding="5" width="50%">
+      <tr>
+        <th><font size="+1">धातु</font></th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+      <% @dhatus.each do |d| %>
+          <tr>
+            <td align="center"><%= d.name %></td>
+            <td align="center"><%= d.description %></td>
+            <td align="center">
+              <table width="100%">
+                <tr>
+                  <td align="center"><%= link_to "Edit", edit_dhatu_path(d) %></td>
+                  <td align="center"><%= link_to "View", dhatu_path(d) %></td>
+                  <td align="center"><%= link_to "Delete", dhatu_path(d), :method => :delete, data: {:confirm => 'Are you sure?'} %></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+      <% end %>
+    </table>
+  </div>
+
+</div>
+
+</body>
+</html>
+

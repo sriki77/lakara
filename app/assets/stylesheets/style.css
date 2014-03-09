@@ -14,7 +14,6 @@ and now onto the meat and potatoes...
 
 body {
     font-family: Lucida Grande, Arial, Verdana, Helvetica, sans-serif;
-    font-size: 11px;
     line-height: 2em;
     color: #666;
     background-color: #FFFFFF;
@@ -42,7 +41,7 @@ h1 {
 
 #header h1 {
     padding-top: 20px;
-    font-size: 70px;
+    font-size: 60px;
     font-weight: normal;
     color: #CC6600;
     text-align: center;
@@ -50,12 +49,10 @@ h1 {
 }
 
 #header h2 {
-    padding-top: 10px;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: normal;
     color: #666;
     text-align: center;
-    padding-bottom: 10px;
 }
 
 #container {
@@ -106,9 +103,6 @@ a:hover {
     color: #999;
 }
 
-li {
-    margin-bottom: 2em;
-}
 
 form {
     height: 15px;
@@ -119,11 +113,54 @@ form {
     background-color: #FFFFFF;
     font-size: 25px;
     color: #666;
-    width: 500px;
+}
+
+#header input[type="password"] {
+    border: 1px solid #CCC;
+    background-color: #FFFFFF;
+    font-size: 25px;
+    color: #666;
 }
 
 #header input[type="submit"] {
-    font-size: 25px;
+    font-size: 50px;
     color: #666;
     width: 150px;
+    height: 150px;
+}
+
+#header select {
+    border: 1px solid #CCC;
+    background-color: #FFFFFF;
+    font-size: 25px;
+    color: #666;
+}
+
+.heading {
+    padding-top: 20px;
+    font-size: 30px;
+    font-weight: normal;
+    color: #CC6600;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.thin_table {
+    border: 1px solid #CCC;
+    color: #666;
+}
+
+.error_heading {
+    padding-top: 10px;
+    font-size: 20px;
+    font-weight: normal;
+    color: #ff0000;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.highlight {
+    font-weight: bold;
+    color: #2E2F30;
+    text-align: center;
 }

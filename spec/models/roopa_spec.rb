@@ -12,7 +12,6 @@ describe Roopa do
       broopa.save
       mroopa.save
       Roopa.all.length.should==2
-      Padam.all.length.should==2
       Lakaras.all.length.should==10
       Purusha.all.length.should==3
       Vachanam.all.length.should==3

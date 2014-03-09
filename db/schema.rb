@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140304134603) do
+ActiveRecord::Schema.define(version: 20140304134117) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20140304134603) do
   create_table "dhatus", force: true do |t|
     t.string   "name"
     t.string   "description"
+    t.integer  "padam_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -53,7 +54,6 @@ ActiveRecord::Schema.define(version: 20140304134603) do
     t.integer  "purusha_id"
     t.integer  "vachanam_id"
     t.integer  "lakaras_id"
-    t.integer  "padam_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

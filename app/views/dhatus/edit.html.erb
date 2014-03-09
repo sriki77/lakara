@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>धतुरूपाणि </title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+</head>
+<body>
+<div id="header" align="center">
+  <h1 align="center">धतुरूपाणि </h1>
+
+  <h2 align="center">भ्वद्यादिजुहोत्यादि: दिवादि:स्वादिरेव च |</h2>
+
+  <h2 align="center"> तुदादिश्च रुधादिश्च तन:क्र्यादिचुरदय: ||</h2>
+  <%= link_to 'Cancel', dhatus_path %>
+  <%= form_for :dhatu, url: dhatu_path(@dhatu), :method => :patch do |d| %>
+      <div align="center">
+        <table cellpadding="5" width="90%" border="0">
+          <tr>
+            <th align="center" colspan="3">
+              <font size="+5"><%= d.text_field :name, :maxlength => 10 %> <%= ApplicationHelper::DHATU %></font>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <%= d.collection_select(:padam_id, Padam.all, :id, :name) %>
+            </th>
+          </tr>
+          <tr>
+            <td align="center" colspan="2"><b><%= d.label :description %></b>
+              :&nbsp;&nbsp;&nbsp; <%= d.text_field :description, :size => 100 %></td>
+          </tr>
+          <tr>
+            <% Lakaras.all.each_with_index do |l, i| %>
+                <td align="center">
+                  <b><%= l.name + " " + ApplicationHelper::LAKARA %> <br/></b>
+                  <table border="1" cellpadding="3" width="100%">
+                    <tr>
+                      <th>-</th>
+                      <% Vachanam.all.each do |v| %>
+                          <td align="center"><i> <%= v.name %></i></td>
+                      <% end %>
+                    </tr>
+                    <% Purusha.all.each do |p| %>
+                        <tr>
+                          <td align="center"><i><%= p.name %></i></td>
+                          <% Vachanam.all.each do |v| %>
+                              <td align="center">
+                                <% r=@dhatu.roopas.find { |r| r.lakaras==l && r.purusha==p && r.vachanam==v } %>
+                                <input name="dhatu[edit_roopas][<%= r.id %>][name]" size="10" type="text" value="<%= r.name %>"/>
+                                <input name="dhatu[edit_roopas][<%= r.id %>][lakaras_id]" type="hidden" value="<%= l.id %>"/>
+                                <input name="dhatu[edit_roopas][<%= r.id %>][purusha_id]" type="hidden" value="<%= p.id %>"/>
+                                <input name="dhatu[edit_roopas][<%= r.id %>][vachanam_id]" type="hidden" value="<%= v.id %>"/>
+                              </td>
+                          <% end %>
+                        </tr>
+                    <% end %>
+                  </table>
+                </td>
+                <% if (i+1)%2==0 %>
+                    </tr>
+                    <tr>
+                <% end %>
+            <% end %>
+            <td align="center" colspan="2"> <%= d.submit %></td>
+            </tr>
+            </table>
+      </div>
+
+  <% end %>
+</div>
+</body>
+</html>
+

@@ -5,7 +5,6 @@ class ApplicationController < ActionController::Base
   private
 
 
-
   def render_with (code, msg)
     render :text => msg, :status => code
   end
@@ -18,8 +17,10 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
+  helper_method :current_user
+
   def authorize
-    render_with 403, "User not authorized" if current_user.nil?
+    redirect_to login_url if current_user.nil?
   end
 
   def to_j (o)
