@@ -15,3 +15,5 @@ Lakaras.delete_all
 Lakaras.create!([{name: 'लट्'},{name: 'लिट्'},{name: 'लुट'},{name: 'लृट्'},{name: 'लोट्'},
                {name:'लङ्'},{name:'विधिलिङ्'},{name:'आशिर्लिङ्'},{name:'लुङ्'},{name:'लृङ्'}])
 
+User.delete_all
+User.create!({name: "Srikanth", email: "sriki77@gmail.com", password: "sriki", password_confirmation: "sriki"})
