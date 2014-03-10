@@ -91,10 +91,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/dhatus/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="74" selection-start="1087" selection-end="1087" vertical-scroll-proportion="0.5230386" vertical-offset="0" max-vertical-offset="975">
+            <state line="50" column="21" selection-start="1960" selection-end="1960" vertical-scroll-proportion="-31.25" vertical-offset="0" max-vertical-offset="975">
               <folding />
             </state>
           </provider>
@@ -109,10 +109,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.json.jbuilder" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="show.json.jbuilder" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/roopas/show.json.jbuilder">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="20" selection-start="670" selection-end="670" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
+            <state line="22" column="33" selection-start="748" selection-end="748" vertical-scroll-proportion="0.39903265" vertical-offset="0" max-vertical-offset="827">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="roopas_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/roopas_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="3" selection-start="351" selection-end="351" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
               <folding />
             </state>
           </provider>
@@ -122,15 +131,6 @@
         <entry file="file://$PROJECT_DIR$/app/views/users/new.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="5" column="0" selection-start="272" selection-end="272" vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="1065">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dhatu.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/dhatu.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="2" selection-start="35" selection-end="51" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
               <folding />
             </state>
           </provider>
@@ -168,7 +168,6 @@
         <option value="$PROJECT_DIR$/app/views/dhatu/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/dhatu/new.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/dhatu_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/roopas/show.json.jbuilder" />
         <option value="$PROJECT_DIR$/db/migrate/20140303140513_create_roopas.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20140304134117_create_dhatus.rb" />
         <option value="$PROJECT_DIR$/spec/factories.rb" />
@@ -183,7 +182,6 @@
         <option value="$PROJECT_DIR$/app/assets/stylesheets/style.css" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/controllers/sessions_controller.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/roopas_controller.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/models/dhatu.rb" />
         <option value="$PROJECT_DIR$/app/models/lakaras.rb" />
@@ -197,6 +195,8 @@
         <option value="$PROJECT_DIR$/app/views/sessions/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/users/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/dhatus/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/roopas_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/roopas/show.json.jbuilder" />
       </list>
     </option>
   </component>
@@ -1268,13 +1268,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/roopas_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="3" selection-start="349" selection-end="349" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.1.1/gems/strip_attributes-1.5.0/lib/strip_attributes.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="43" column="6" selection-start="1399" selection-end="1399" vertical-scroll-proportion="0.7588235" vertical-offset="0" max-vertical-offset="1455">
@@ -1331,13 +1324,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/roopas/show.json.jbuilder">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="20" selection-start="670" selection-end="670" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="0" selection-start="597" selection-end="597" vertical-scroll-proportion="-15.0" vertical-offset="0" max-vertical-offset="450">
@@ -1354,7 +1340,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/dhatus/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="74" selection-start="1087" selection-end="1087" vertical-scroll-proportion="0.5230386" vertical-offset="0" max-vertical-offset="975">
+        <state line="50" column="21" selection-start="1960" selection-end="1960" vertical-scroll-proportion="-31.25" vertical-offset="0" max-vertical-offset="975">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/roopas_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="3" selection-start="351" selection-end="351" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/roopas/show.json.jbuilder">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="33" selection-start="748" selection-end="748" vertical-scroll-proportion="0.39903265" vertical-offset="0" max-vertical-offset="827">
           <folding />
         </state>
       </provider>

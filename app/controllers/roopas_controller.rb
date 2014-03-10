@@ -4,7 +4,7 @@ class RoopasController < ApplicationController
     roopa_params
     name=params[:r]
     unless name.blank?
-      @roopa = Roopa.find_by_name(name.strip)
+      @roopa = Roopa.where(:name => name.strip)
       p @roopa
     end
     respond_to do |f|
