@@ -4,11 +4,11 @@ unless @roopa.empty?
   json.roopa @first_roopa.name
   json.desc "#{@first_roopa.dhatu.name} #{ApplicationHelper::DHATU}, #{@first_roopa.dhatu.padam.name} "
 
-  details = []
+  matches = []
   @roopa.each do |r|
-    details << "#{r.lakaras.name} #{ApplicationHelper::LAKARA}, #{r.purusha.name}, #{r.vachanam.name}"
+    matches << "#{r.lakaras.name} #{ApplicationHelper::LAKARA}, #{r.purusha.name}, #{r.vachanam.name}"
   end
-  json.details details
+  json.matches details
 
   dhatu=@first_roopa.dhatu
   json.lakaras Lakaras.all do |l|
