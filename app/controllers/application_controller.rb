@@ -14,8 +14,6 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    p "Session: "+session.to_hash.to_s
-    p "User Id: "+ session[:user_id].to_s
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 

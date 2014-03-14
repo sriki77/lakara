@@ -5,7 +5,6 @@ class RoopasController < ApplicationController
     name=params[:r]
     unless name.blank?
       @roopa = Roopa.where(:name => name.strip)
-      p @roopa
     end
     respond_to do |f|
       f.json

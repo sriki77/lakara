@@ -1,12 +1,13 @@
 require 'factory_girl'
 
 FactoryGirl.define do
-  factory :users do
+  factory :user do
     name "Srikanth"
     email "a@a.com"
     password "abc123"
     password_confirmation "abc123"
   end
+
 
   factory :dhatu_with_one_roopa, class: Dhatu do
     name "भ"

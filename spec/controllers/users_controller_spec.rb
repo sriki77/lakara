@@ -1,39 +1,35 @@
 require 'spec_helper'
 
 describe UsersController do
+  before(:each) do
+    load "#{Rails.root}/db/seeds.rb"
+    session[:user_id]=User.all[0].id
+  end
 
   context "When Insufficient information" do
 
     it "should return 400 for missing users" do
       post :create
-      response.response_code.should==400
+      expect(response).to redirect_to(new_user_url)
+      response.response_code.should==302
     end
 
     it "should return 403 for missing users data" do
       post :create, {:users => {}}
-      response.response_code.should==403
-      res=JSON.parse(response.body)
-      res['email'].should_not be_nil
-      res['name'].should_not be_nil
-      res['password'].should_not be_nil
+      expect(response).to redirect_to(new_user_url)
+      response.response_code.should==302
     end
 
     it "should return 403 for missing users name, password" do
       post :create, {:users => {:email => 'cooker@gmail.com'}}
-      response.response_code.should==403
-      res=JSON.parse(response.body)
-      res['email'].should be_nil
-      res['name'].should_not be_nil
-      res['password'].should_not be_nil
+      expect(response).to redirect_to(new_user_url)
+      response.response_code.should==302
     end
 
     it "should return 403 for missing users password" do
       post :create, {:users => {:email => 'cooker@gmail.com', :name => 'hawkings'}}
-      response.response_code.should==403
-      res=JSON.parse(response.body)
-      res['email'].should be_nil
-      res['name'].should be_nil
-      res['password'].should_not be_nil
+      expect(response).to redirect_to(new_user_url)
+      response.response_code.should==302
     end
   end
 
@@ -41,33 +37,24 @@ describe UsersController do
 
     it "should return 403 if users name length is invalid" do
       post :create, {:users => {:name => 'a', :email => 'a@a.com', :password => 'p', :password_confirmation => 'p'}}
-      response.response_code.should==403
-      res=JSON.parse(response.body)
-      res['name'].should_not be_nil
-      post :create, {:users => {:name => 'c_b_c', :email => 'a@a.com', :password => 'p', :password_confirmation => 'p'}}
-      response.response_code.should==403
-      res=JSON.parse(response.body)
-      res['name'].should_not be_nil
+      expect(response).to redirect_to(new_user_url)
+      response.response_code.should==302
     end
 
-    it "should return 403 if users exits" do
-      user = FactoryGirl.create(:users)
+    it "should return 403 if users exists" do
+      user = FactoryGirl.create(:user)
       post :create, {:users => {:email => user.email, :name => user.name, :password => user.password, :password_confirmation => user.password_confirmation}}
-      response.response_code.should==403
-      res=JSON.parse(response.body)
-      res['email'].should_not be_nil
-      res['name'].should be_nil
-      res['password'].should be_nil
-      res['password_confirmation'].should be_nil
+      expect(response).to redirect_to(new_user_url)
+      response.response_code.should==302
     end
   end
 
   context "When new valid users" do
     it "Should create the users" do
-      user = FactoryGirl.build(:users)
-      post :create, {:users => {:email => user.email, :name => user.name, :password => user.password, :password_confirmation => user.password_confirmation}}
-      response.response_code.should==200
-      response.body.should == user.email
+      user = FactoryGirl.build(:user)
+      post :create, {:user => {:email => user.email, :name => user.name, :password => user.password, :password_confirmation => user.password_confirmation}}
+      expect(response).to redirect_to(dhatus_url)
+      response.response_code.should==302
     end
   end
 

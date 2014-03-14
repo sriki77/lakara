@@ -7,6 +7,9 @@ class UsersController < ApplicationController
   end
 
   def create
+
+    return redirect_to new_user_url unless params[:user]
+
     @user = User.new(user_params)
     if @user.save
       redirect_to dhatus_url, notice: "Thank you for signing up!"
