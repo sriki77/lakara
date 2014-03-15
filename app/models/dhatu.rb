@@ -20,6 +20,6 @@ class Dhatu < ActiveRecord::Base
     roopas.reject(&:new_record?).each do |roopa|
       attributes = roopa_attributes[roopa.id.to_s]
       roopa.attributes = attributes
-      end
+    end
   end
 end

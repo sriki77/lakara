@@ -1,7 +1,7 @@
 class CreateRoopas < ActiveRecord::Migration
   def change
     create_table :roopas do |t|
-      t.string :name, :null => false
+      t.string :name
       t.belongs_to (:dhatu)
       t.belongs_to (:purusha)
       t.belongs_to (:vachanam)

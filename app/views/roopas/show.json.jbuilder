@@ -20,7 +20,7 @@ unless @roopa.empty?
       row << p.name
       Vachanam.all.each do |v|
         r=dhatu.roopas.find { |r| r.lakaras==l && r.purusha==p && r.vachanam==v }
-        row << (r ? r.name : "-")
+        row << (r.name ? r.name : "-")
       end
       table << row
     end

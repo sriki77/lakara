@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20140304134117) do
   add_index "purushas", ["name"], name: "index_purushas_on_name", unique: true, using: :btree
 
   create_table "roopas", force: true do |t|
-    t.string   "name",        null: false
+    t.string   "name"
     t.integer  "dhatu_id"
     t.integer  "purusha_id"
     t.integer  "vachanam_id"
