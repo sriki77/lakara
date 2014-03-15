@@ -58,4 +58,3 @@ production:
   database: lakara_production
   pool: 5
   username: lakara
-  password:

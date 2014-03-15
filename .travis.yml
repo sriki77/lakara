@@ -1,13 +1,14 @@
 language: ruby
 rvm:
-- 2.1.1
+  - 2.1.1
 env:
-  SECRET_TOKEN="$(bundle exec rake secret)"
+  global:
+    - SECRET_TOKEN="$(bundle exec rake secret)"
 script:
-- RAILS_ENV=test bundle exec rake db:drop db:create db:migrate db:seed
-- bundle exec rake
+  - RAILS_ENV=test bundle exec rake db:drop db:create db:migrate db:seed
+  - bundle exec rake
 before_script:
-- psql -c 'create database lakara_test' -U postgres
+  - psql -c 'create database lakara_test' -U postgres
 deploy:
   provider: heroku
   api_key:
@@ -16,6 +17,6 @@ deploy:
   on:
     repo: sriki77/lakara
   run:
-  - rake db:migrate
-  - rake db:seed
-  - restart
+    - rake db:migrate
+    - rake db:seed
+    - restart
