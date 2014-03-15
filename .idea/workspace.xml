@@ -73,10 +73,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".travis.yml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name=".travis.yml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="14" selection-start="170" selection-end="170" vertical-scroll-proportion="0.12352941" vertical-offset="0" max-vertical-offset="850">
+            <state line="7" column="14" selection-start="170" selection-end="170" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
               <folding />
             </state>
           </provider>
@@ -109,10 +109,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Gemfile" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="22" selection-start="1114" selection-end="1114" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="900">
+            <state line="40" column="0" selection-start="1012" selection-end="1012" vertical-scroll-proportion="0.64705884" vertical-offset="50" max-vertical-offset="930">
               <folding />
             </state>
           </provider>
@@ -170,7 +170,6 @@
         <option value="$PROJECT_DIR$/app/views/sesssions/new.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/style.css" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/models/lakaras.rb" />
         <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="$USER_HOME$/.rvm/gems/ruby-2.1.1/gems/strip_attributes-1.5.0/lib/strip_attributes.rb" />
@@ -206,6 +205,7 @@
         <option value="$PROJECT_DIR$/db/migrate/20140304134117_create_roopas.rb" />
         <option value="$PROJECT_DIR$/app/views/roopas/show.json.jbuilder" />
         <option value="$PROJECT_DIR$/.travis.yml" />
+        <option value="$PROJECT_DIR$/Gemfile" />
       </list>
     </option>
   </component>
@@ -928,13 +928,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="22" selection-start="1114" selection-end="1114" vertical-scroll-proportion="0.0" vertical-offset="43" max-vertical-offset="900">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spec/requests/roopa_mgmt_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="68" selection-start="712" selection-end="712" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="660">
@@ -982,7 +975,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="14" selection-start="170" selection-end="170" vertical-scroll-proportion="0.12352941" vertical-offset="0" max-vertical-offset="850">
+        <state line="7" column="14" selection-start="170" selection-end="170" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="0" selection-start="1012" selection-end="1012" vertical-scroll-proportion="0.64705884" vertical-offset="50" max-vertical-offset="930">
           <folding />
         </state>
       </provider>
