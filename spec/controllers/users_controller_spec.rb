@@ -2,7 +2,9 @@ require 'spec_helper'
 
 describe UsersController do
   before(:each) do
-    session[:user_id]=User.all[0].id
+    usr = User.all[0]
+    session[:user]=usr
+    session[:user_id]=usr.id
   end
 
   context "When Insufficient information" do

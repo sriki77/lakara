@@ -11,14 +11,14 @@ unless @roopa.empty?
   json.matches matches
 
   dhatu=@first_roopa.dhatu
-  json.lakaras Lakaras.all do |l|
+  json.lakaras @allLakaras do |l|
     json.name l.name + " " +ApplicationHelper::LAKARA
     table=[]
-    table<<Vachanam.all.collect { |v| v.name }.unshift("-")
-    Purusha.all.each do |p|
+    table<<@allVachanas.collect { |v| v.name }.unshift("-")
+    @allPurushas.each do |p|
       row=[]
       row << p.name
-      Vachanam.all.each do |v|
+      @allVachanas.each do |v|
         r=dhatu.roopas.find { |r| r.lakaras==l && r.purusha==p && r.vachanam==v }
         row << ( r && r.name ? r.name : "-")
       end

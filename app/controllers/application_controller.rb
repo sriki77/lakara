@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   private
 
-
   def render_with (code, msg)
     render :text => msg, :status => code
   end
@@ -14,7 +13,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    @current_user=session[:user] if session[:user_id]
   end
 
   helper_method :current_user
@@ -25,6 +24,12 @@ class ApplicationController < ActionController::Base
 
   def to_j (o)
     o.as_json(:except => [:id, :created_at, :updated_at, :lock_version])
+  end
+
+  def load_ref_data
+    @allLakaras ||=Lakaras.all
+    @allVachanas ||=Vachanam.all
+    @allPurushas ||=Purusha.all
   end
 
 end

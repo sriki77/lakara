@@ -1,24 +1,24 @@
 class DhatusController < ApplicationController
-  before_filter :authorize
+  before_filter :authorize, :load_ref_data
 
   def index
     @dhatus=Dhatu.all
   end
 
   def show
-    @dhatu= Dhatu.find(params[:id])
+    @dhatu= Dhatu.includes(:roopas).find(params[:id])
   end
 
   def new
   end
 
   def edit
-    @dhatu= Dhatu.find(params[:id])
+    @dhatu= Dhatu.includes(:roopas).find(params[:id])
   end
 
   def update
     dhatu_params
-    @dhatu= Dhatu.find(params[:id])
+    @dhatu= Dhatu.includes(:roopas).find(params[:id])
     @dhatu.update!(dhatu_params)
     redirect_to @dhatu
   end

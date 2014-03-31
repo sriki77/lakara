@@ -37,7 +37,6 @@ end
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl'
-  gem 'dotenv'
 end
 
 gem "active_model_serializers"

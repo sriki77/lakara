@@ -1,4 +1,5 @@
 class RoopasController < ApplicationController
+  before_filter :load_ref_data
 
   def show
     roopa_params
