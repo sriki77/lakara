@@ -1,10 +1,6 @@
 require 'spec_helper'
 
 describe Roopa do
-  before(:each) do
-    load "#{Rails.root}/db/seeds.rb"
-  end
-
   context "Create roopa of different types and validate" do
     it "should create parasmi & atamepadi pada roopa" do
       broopa=FactoryGirl.build(:bhava_roopa)

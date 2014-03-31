@@ -2,7 +2,6 @@ require 'spec_helper'
 
 describe UsersController do
   before(:each) do
-    load "#{Rails.root}/db/seeds.rb"
     session[:user_id]=User.all[0].id
   end
 

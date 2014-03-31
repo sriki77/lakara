@@ -5,15 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Padam.delete_all
 Padam.create!([{name: 'परस्मैपदम्'},{name: 'आत्मनेपदम्'}]);
-Vachanam.delete_all
 Vachanam.create!([{name: 'एकवचनम्'},{name: 'द्विवचनम्'},{name: 'बहुवचनम'}]);
-Purusha.delete_all
 Purusha.create!([{name: 'प्रथमपुरुष:'},{name: 'मध्यमपुरुष:'},{name: 'उत्तमपुरुष:'}]);
-Lakaras.delete_all
 Lakaras.create!([{name: 'लट्'},{name: 'लिट्'},{name: 'लुट'},{name: 'लृट्'},{name: 'लोट्'},
                {name:'लङ्'},{name:'विधिलिङ्'},{name:'आशिर्लिङ्'},{name:'लुङ्'},{name:'लृङ्'}])
-
-User.delete_all
 User.create!({name: "Srikanth", email: "sriki77@gmail.com", password: "sriki", password_confirmation: "sriki"})

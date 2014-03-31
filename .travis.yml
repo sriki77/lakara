@@ -18,5 +18,4 @@ deploy:
     repo: sriki77/lakara
   run:
     - rake db:migrate
-    - rake db:seed
     - restart

@@ -4,3 +4,6 @@
 require File.expand_path('../config/application', __FILE__)
 
 Lakara::Application.load_tasks
+
+
+task :spec  => "db:seed"

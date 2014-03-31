@@ -3,7 +3,6 @@ require 'spec_helper'
 describe "Roopa Retrievals" do
 
   before(:each) do
-    load "#{Rails.root}/db/seeds.rb"
     d1=FactoryGirl.build(:bhu_dhatu_with_roopas)
     d1.save
   end

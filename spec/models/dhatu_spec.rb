@@ -1,10 +1,6 @@
 require 'spec_helper'
 
 describe Dhatu do
-  before(:each) do
-    load "#{Rails.root}/db/seeds.rb"
-  end
-
   context "Create dhatus of different types and validate" do
     it "should create dhatus with one roopa" do
       d1=FactoryGirl.build(:dhatu_with_one_roopa)
