@@ -5,7 +5,7 @@ class RoopasController < ApplicationController
     roopa_params
     name=params[:r]
     unless name.blank?
-      @roopa = Roopa.where(:name => name.strip)
+      @roopa = Roopa.includes(:dhatu,:purusha,:vachanam,:lakaras).where(:name => name.strip)
     end
     respond_to do |f|
       f.json

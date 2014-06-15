@@ -46,6 +46,8 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 
 gem 'strip_attributes'
 
+gem 'rack-cors', :require => 'rack/cors'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
