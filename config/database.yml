@@ -48,8 +48,8 @@ test:
   encoding: unicode
   database: lakara_test
   pool: 5
-  username: Srikanth
-  password:
+  username: postgres
+  password: postgres
   host: localhost
 
 production:
