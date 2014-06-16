@@ -15,8 +15,8 @@
     <SUITE FILE_PATH="coverage/lakara@Roopa_Retrievals_should_suppor_only_JSON_format___lakara.coverage" NAME="Roopa Retrievals should suppor only JSON format : lakara Coverage Results" MODIFIED="1394257220555" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="lakara" />
     <SUITE FILE_PATH="coverage/lakara@Roopa_Create_roopa_of_different_types_and_validate__lakara.coverage" NAME="Roopa Create roopa of different types and validate: lakara Coverage Results" MODIFIED="1393941522313" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="lakara" />
     <SUITE FILE_PATH="coverage/lakara@Roopa_Retrievals_should_return_JSON_for_lat_lakara__lakara.coverage" NAME="Roopa Retrievals should return JSON for lat lakara: lakara Coverage Results" MODIFIED="1396239629692" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="lakara" />
-    <SUITE FILE_PATH="coverage/lakara@RoopasController_Validate_Roopas_Show_Action_should_return_roopas_description_and_details__lakara.coverage" NAME="RoopasController Validate Roopas Show Action should return roopas description and details: lakara Coverage Results" MODIFIED="1394245823834" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="lakara" />
     <SUITE FILE_PATH="coverage/lakara@UsersController__lakara.coverage" NAME="UsersController: lakara Coverage Results" MODIFIED="1394805640178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="lakara" />
+    <SUITE FILE_PATH="coverage/lakara@RoopasController_Validate_Roopas_Show_Action_should_return_roopas_description_and_details__lakara.coverage" NAME="RoopasController Validate Roopas Show Action should return roopas description and details: lakara Coverage Results" MODIFIED="1394245823834" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="lakara" />
     <SUITE FILE_PATH="coverage/lakara@UsersController_When_input_is_invalid__lakara.coverage" NAME="UsersController When input is invalid: lakara Coverage Results" MODIFIED="1393665740479" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="lakara" />
     <SUITE FILE_PATH="coverage/lakara@UsersController_When_Insufficient_information_should_return_403_for_missing_user_handle__lakara.coverage" NAME="UsersController When Insufficient information should return 403 for missing user handle: lakara Coverage Results" MODIFIED="1393664975055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="lakara" />
     <SUITE FILE_PATH="coverage/lakara@Dhatu_Create_dhatus_of_different_types_and_validate__lakara.coverage" NAME="Dhatu Create dhatus of different types and validate: lakara Coverage Results" MODIFIED="1394356750046" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="lakara" />
@@ -52,10 +52,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Rakefile" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Rakefile" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Rakefile">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="0" selection-start="278" selection-end="278" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="225">
+            <state line="9" column="0" selection-start="278" selection-end="278" vertical-scroll-proportion="0.20801233" vertical-offset="0" max-vertical-offset="649">
               <folding />
             </state>
           </provider>
@@ -70,19 +70,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="database.yml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="database.yml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/database.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="20" selection-start="1551" selection-end="1551" vertical-scroll-proportion="0.6563945" vertical-offset="339" max-vertical-offset="990">
+            <state line="22" column="20" selection-start="589" selection-end="589" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".travis.yml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="6" selection-start="51" selection-end="51" vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="405">
+            <state line="16" column="0" selection-start="657" selection-end="657" vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="3990">
               <folding />
             </state>
           </provider>
@@ -152,7 +152,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/db/migrate/20140304134117_create_dhatus.rb" />
         <option value="$PROJECT_DIR$/app/views/user/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/sesssions/new.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/style.css" />
@@ -203,6 +202,7 @@
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/config.ru" />
         <option value="$PROJECT_DIR$/config/database.yml" />
+        <option value="$PROJECT_DIR$/public/index.html" />
       </list>
     </option>
   </component>
@@ -244,7 +244,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="RailsProjectView" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -273,12 +272,27 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lakara" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lakara" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="RailsProjectView" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -640,14 +654,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="795" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22532189" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22818312" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -655,12 +669,12 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.58492976" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.58492976" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32915717" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -679,9 +693,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25772098" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41230068" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -703,11 +717,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/dhatu.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="31" selection-start="84" selection-end="113" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spec/models/dhatu_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="48" selection-start="477" selection-end="477" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495" />
@@ -943,13 +952,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Rakefile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="278" selection-end="278" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/application.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
@@ -964,6 +966,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="0" selection-start="657" selection-end="657" vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="3990">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config.ru">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="32" selection-start="214" selection-end="214" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
@@ -973,7 +982,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/database.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="20" selection-start="1551" selection-end="1551" vertical-scroll-proportion="0.6563945" vertical-offset="339" max-vertical-offset="990">
+        <state line="22" column="20" selection-start="589" selection-end="589" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Rakefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="278" selection-end="278" vertical-scroll-proportion="0.20801233" vertical-offset="0" max-vertical-offset="649">
           <folding />
         </state>
       </provider>
