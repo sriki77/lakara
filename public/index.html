@@ -24,39 +24,128 @@
 
       
       <script type="text/javascript">
-        $(function(){
-         $('#searchButton').on('click', function(event) {
-          var word = $('#word').val();
-          $.getJSON("http://lakara.herokuapp.com/roopa.json?r="+word,function(data){alert(data);});
+        $(document).ready(function(){
+
+          function hidePanels(){
+            $('#search-progress').hide();
+            $('#result-desc-row').hide();
+            $('#result-error-row').hide();
+            $('#result-warning-row').hide();
+          };
+
+          function renderDesc(data){
+           $('#result-desc').text(data.roopa);
+           $('#result-matches').empty();
+           $('#result-matches').append('<li class="list-group-item text-success">'+ data.desc+'</li>');
+           renderMatches(data);
+           $('#result-desc-row').show(); 
+         }
+
+         function renderMatches(data){
+          $.each(data.matches, function(key,val){
+            $('#result-matches').append('<li class="list-group-item text-success">'+ val+'</li>');
+          });
+        }
+
+        function renderTableHeader(table,data){
+          var row='<thead><tr>';
+          $.each(data, function(key,val){
+            row+='<th>'+val+'</th>';
+          });
+          row += '</tr></thead>';
+          $(table).append(row);
+        }
+
+        function renderTableBodyRow(table,data){
+          var word = $('#word').val().trim();
+          var row='<tr>';
+          $.each(data, function(key,val){
+            if(word==val){
+              row+='<td> <p class="text-primary"><strong>'+val+'</strong></p></td>';
+            }else{
+              row+='<td>'+val+'</td>';
+            }
+
+          });
+          row += '</tr>';
+          $(table).append(row);
+        }
+
+        function renderTableBody(table,data){
+          $(table).append('<tbody></tbody>');
+          $.each(data, function(key,val){
+            renderTableBodyRow(table +' tbody',val)
+          });
+        }
+
+        function renderTable(row,tableno,data){
+         $('#'+row)
+         .append('<div class="col-lg-4"><div class="table-responsive">'
+          +'<table class="table table-bordered" id="table'+tableno+'"><caption>'
+          +data.name+'</caption></table></div></div>');
+         renderTableHeader('#'+row+' #table'+tableno,data.table[0]);
+         renderTableBody('#'+row+' #table'+tableno,data.table.slice(1));
+       }
+
+       function renderTables(data){
+         var rowId='#result-tables';
+         $(rowId).empty();
+         $.each(data.lakaras, function(key,val){
+          if(key%3==0){
+            rowId='row-'+key;
+            $('#result-tables').append('<div id="'+rowId+'"class="row"></div');
+          }
+          renderTable(rowId,key,val);
         });
-       });
-      </script>
-    </head>
+       }
+
+       hidePanels();
 
 
-    <body>
-      <section id="navigation-bar">
-       <div class="navbar navbar-default navbar-fixed-top">
-         <div class="container">
+       $('#searchButton').on('click', function(event) {
+         hidePanels(); 
+         $('#search-progress').show();
+         var word = $('#word').val();
+         $.getJSON("http://lakara.herokuapp.com/roopa.json?r="+word,
+          function(data){
+            renderDesc(data);
+            renderTables(data);
 
-           <div class="navbar-header">
-            <div class="navbar-brand">
-              Lakara
-            </div>
-          </div>
+          }).always(function(){
+            $('#search-progress').hide();
+          }).fail(function(jqxhr, textStatus, error){
+            $('#result-error-row').show();
+          });
+        });
 
-          <div id="navbar-main" class="navbar-collapse collapse" style="padding-top: 17px;">
-           <div class="nav navbar-nav">
-             write lakara kathe
-           </div>
-           <ul class="nav navbar-nav navbar-right">
-            <a href="#">About</a>
-          </ul>
+
+     });
+   </script>
+ </head>
+
+
+ <body>
+  <section id="navigation-bar">
+   <div class="navbar navbar-default navbar-fixed-top">
+     <div class="container">
+       <div class="navbar-header">
+        <div class="navbar-brand">
+          Lakara
         </div>
-
       </div>
+
+      <div id="navbar-main" class="navbar-collapse collapse" style="padding-top: 17px;">
+       <div class="nav navbar-nav">
+         write lakara kathe
+       </div>
+       <ul class="nav navbar-nav navbar-right">
+        <a href="#">About</a>
+      </ul>
     </div>
+
   </div>
+</div>
+</div>
 </section>
 <section id="Introduction">
   <div class="container">
@@ -72,7 +161,8 @@
 <section id="word-search">
   <div class="container">
     <div class="row">
-      <div class="col-lg-12">
+      <div class="col-lg-3"></div>
+      <div class="col-lg-6">
        Please enter the word
        <div class="input-group">
          <input class="form-control input-lg" id="word" type="text" value="भवति " />
@@ -82,119 +172,64 @@
       </div>
       <span class="help-block">Please input word in Devanagiri script using the Google Input Tools Plugin</span>
     </div>
+    <div class="col-lg-3"></div>
   </div>
 </div>
-<div class="page-header"></div>
+<div class="page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4"></div>
+      <div class="col-lg-4"> <div id="search-progress" class="progress progress-striped active">
+        <div class="progress-bar progress-bar-success" style="width: 100%"> Fetching data </div>
+      </div>
+    </div>
+    <div class="col-lg-4"></div>
+  </div>
+</div>
+</div>
 </div>
 </section>
 <section id="word-search-result">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-4">
-        <div class="table-responsive">
-          <table class="table table-bordered">
-            <caption>लट् लाकर:</caption>
-            <thead>
-              <tr>
-                <th>-</th>
-                <th>एकवचनम्</th>
-                <th>द्विवचनम्</th>
-                <th>बहुवचनम</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td align="center"><i>प्रथमपुरुष:</i></td>
-                <td align="center">भवति</td>
-                <td align="center">भवत:</td>
-                <td align="center">भवन्ति</td>
-              </tr>
-              <tr>
-                <td align="center"><i>मध्यमपुरुष:</i></td>
-                <td align="center">भवसि</td>
-                <td align="center">भवथ:</td>
-                <td align="center">भवथ</td>
-              </tr>
-              <tr>
-                <td align="center"><i>उत्तमपुरुष:</i></td>
-                <td align="center">भवामि</td>
-                <td align="center">भवाव:</td>
-                <td align="center">भवाम:</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <div class="col-lg-4"><div class="table-responsive">
-        <table class="table table-bordered">
-          <caption>लट् लाकर:</caption>
-          <thead>
-            <tr>
-              <th>-</th>
-              <th>एकवचनम्</th>
-              <th>द्विवचनम्</th>
-              <th>बहुवचनम</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td align="center"><i>प्रथमपुरुष:</i></td>
-              <td align="center">भवति</td>
-              <td align="center">भवत:</td>
-              <td align="center">भवन्ति</td>
-            </tr>
-            <tr>
-              <td align="center"><i>मध्यमपुरुष:</i></td>
-              <td align="center">भवसि</td>
-              <td align="center">भवथ:</td>
-              <td align="center">भवथ</td>
-            </tr>
-            <tr>
-              <td align="center"><i>उत्तमपुरुष:</i></td>
-              <td align="center">भवामि</td>
-              <td align="center">भवाव:</td>
-              <td align="center">भवाम:</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="col-lg-4"><div class="table-responsive">
-      <table class="table table-bordered">
-        <caption>लट् लाकर:</caption>
-        <thead>
-          <tr>
-            <th>-</th>
-            <th>एकवचनम्</th>
-            <th>द्विवचनम्</th>
-            <th>बहुवचनम</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td align="center"><i>प्रथमपुरुष:</i></td>
-            <td align="center">भवति</td>
-            <td align="center">भवत:</td>
-            <td align="center">भवन्ति</td>
-          </tr>
-          <tr>
-            <td align="center"><i>मध्यमपुरुष:</i></td>
-            <td align="center">भवसि</td>
-            <td align="center">भवथ:</td>
-            <td align="center">भवथ</td>
-          </tr>
-          <tr>
-            <td align="center"><i>उत्तमपुरुष:</i></td>
-            <td align="center">भवामि</td>
-            <td align="center">भवाव:</td>
-            <td align="center">भवाम:</td>
-          </tr>
-        </tbody>
-      </table>
+
+    <div id="result-desc-row" class="row">
+      <div class="col-lg-3"></div>
+      <div class="col-lg-6">
+       <h4 class="text-info" id="result-desc"></h4>
+       <ul id="result-matches" class="list-group"></ul>
+     </div>
+     <div class="col-lg-3"></div>
+   </div>
+   
+
+
+   <div id="result-error-row" class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6" align="center">
+     <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert">×</button>
+      <strong>Oh snap!</strong> Error occurred seaching and try submitting again.
     </div>
   </div>
+  <div class="col-lg-3"></div>
 </div>
 
+
+<div id="result-warning-row" class="row">
+  <div class="col-lg-3"></div>
+  <div class="col-lg-6" align="center">
+   <div class="alert alert-dismissable alert-warning">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    <strong>Word</strong> not found. If this i valid, please contact us a@a.com; 
+    we will be happy to add it for you.
+  </div>
+</div>
+<div class="col-lg-3"></div>
+</div>
+
+
+<div  id="result-tables">
+</div>
 </div>
 </section>
 </body>

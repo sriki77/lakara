@@ -12,7 +12,8 @@
       <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://127.0.0.1/lakara_test</jdbc-url>
-      <user-name>Srikanth</user-name>
+      <user-name>postgres</user-name>
+      <user-password>dfdadfc5dfd9dfdedfcddfd8dfcfdfd9</user-password>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails lakara: production" uuid="d3e4e554-0d86-44e5-82a6-7d33e0f7e329">
