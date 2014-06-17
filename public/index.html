@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Lakara</title>
+	<title>लकारा:</title>
 
 	<!-- Bootstrap -->
 	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -31,14 +31,17 @@
             $('#result-desc-row').hide();
             $('#result-error-row').hide();
             $('#result-warning-row').hide();
+            $('#lakara-heading-row').hide();
           };
 
           function renderDesc(data){
            $('#result-desc').text(data.roopa);
+           $('#dhatu-name').text(data.desc);
            $('#result-matches').empty();
            $('#result-matches').append('<li class="list-group-item text-success">'+ data.desc+'</li>');
            renderMatches(data);
            $('#result-desc-row').show(); 
+           $('#lakara-heading-row').show();
          }
 
          function renderMatches(data){
@@ -58,12 +61,17 @@
 
         function renderTableBodyRow(table,data){
           var word = $('#word').val().trim();
-          var row='<tr>';
+          var row='<tr>'; var bold=true;
           $.each(data, function(key,val){
             if(word==val){
-              row+='<td> <p class="text-primary"><strong>'+val+'</strong></p></td>';
+              row+='<td><span class="text-primary"><strong>'+val+'</strong></span></td>';
             }else{
-              row+='<td>'+val+'</td>';
+              if(bold){
+                row+='<td><b>'+val+'</b></td>';
+                bold=false;
+              }else{
+                row+='<td>'+val+'</td>';
+              }
             }
 
           });
@@ -81,7 +89,7 @@
         function renderTable(row,tableno,data){
          $('#'+row)
          .append('<div class="col-lg-4"><div class="table-responsive">'
-          +'<table class="table table-bordered" id="table'+tableno+'"><caption>'
+          +'<table class="table " id="table'+tableno+'"><caption class="text-danger">'
           +data.name+'</caption></table></div></div>');
          renderTableHeader('#'+row+' #table'+tableno,data.table[0]);
          renderTableBody('#'+row+' #table'+tableno,data.table.slice(1));
@@ -138,13 +146,13 @@
      <div class="container">
        <div class="navbar-header">
         <div class="navbar-brand">
-          Lakara
+          लकारा: 
         </div>
       </div>
 
       <div id="navbar-main" class="navbar-collapse collapse" style="padding-top: 17px;">
-       <div class="nav navbar-nav">
-         write lakara kathe
+       <div class="nav navbar-nav" align="center">
+         अन्वेषणीय धातुरूपाणि  सङ्ग्रह
        </div>
        <ul class="nav navbar-nav navbar-right">
         <button id="about" class="btn btn-danger" rel="popover" 
@@ -160,28 +168,32 @@
 </section>
 <section id="Introduction">
   <div class="container">
-    <div class="page-header">
       <div class="row">
        <div class="jumbotron">
-        <h1>Hello, Lakara!</h1>
-        <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        <h2>धातुरूपाणि</h2>
+        संकृतभषायां प्रायेण 2200 धातव: (roots) सन्ति | तेषाम एकैकस्यापि धातो: दश: लकारा: (tenses and moods) संभवन्ति | तेषु षट् लकारा: कालवाचका: (tenses) चत्वार: प्रकरबोधका: (moods) |<br/>
+        षट् कालवाचका: - लट् , लृट् , लुङ् , लुट, लङ्, लिट् | <br/>
+        चत्वार: प्रकरबोधका: - लोट् , विधिलिङ् , आशिर्लिङ् , लृङ् | <br/>
+        तेषाम एकैकस्यापि लकारस्य स्थाने पृथक् पुरुषप्रत्यया: भवन्ति | पुरुषाश्च त्रय: सन्ति - प्रथमपुरुष:(third person), मध्यमपुरुष:(second person), उत्तमपुरुष:(first person) | <br/>
+        पुरुषाणां  प्रत्येकं  त्रीणि वचनानि विद्यन्ते - एकवचनम्(singular), द्विवचनम्(dual), बहुवचनम(plural)| <br/><br/>
+        एतत्  अन्वेषणीय धातुरूपाणि सङ्ग्रह | यदि भवान अध:स्थ अन्वेषिके(search box) पदं (word) ददाति तर्हि दत्त पदस्य सम्पूर्ण धातुरूपाणि निर्देशा:(details) उत्पन्नं भवति |
       </div>
     </div>
-  </div>
 </section>
 <section id="word-search">
   <div class="container">
     <div class="row">
       <div class="col-lg-3"></div>
       <div class="col-lg-6">
-       Please enter the word
+       Please enter the word (पदम्)
        <div class="input-group">
          <input class="form-control input-lg" id="word" type="text" value="भवति " />
          <span class="input-group-btn">
-          <button id="searchButton" class="btn btn-primary btn-lg" type="button">Search</button>
+          <button id="searchButton" class="btn btn-primary btn-lg" type="button">Search/अन्वेषणम्</button>
         </span>
       </div>
-      <span class="help-block">Please input word in Devanagiri script using the Google Input Tools Plugin</span>
+      <span class="help-block"><small>Please input word in Devanagiri script using the <a href="http://www.google.co.in/inputtools/" rel="nofollow">Google Input Tools Plugin</a> or any other tools of your choice.</small>
+      </span>
     </div>
     <div class="col-lg-3"></div>
   </div>
@@ -190,7 +202,7 @@
   <div class="row">
     <div class="col-lg-4"></div>
     <div class="col-lg-4"> <div id="search-progress" class="progress progress-striped active">
-      <div class="progress-bar progress-bar-success" style="width: 100%"> Fetching data </div>
+      <div class="progress-bar progress-bar-success" style="width: 100%"> Fetching data/आहरणम् </div>
     </div>
   </div>
   <div class="col-lg-4"></div>
@@ -200,7 +212,6 @@
 </section>
 <section id="word-search-result">
   <div class="container">
-
     <div id="result-desc-row" class="row">
       <div class="col-lg-3"></div>
       <div class="col-lg-6">
@@ -218,6 +229,7 @@
      <div class="alert alert-dismissable alert-danger">
       <button type="button" class="close" data-dismiss="alert">×</button>
       <strong>Oh snap!</strong> Error occurred seaching and try submitting again.
+      <br/>समस्या अभवत् , पुन: अन्वेषणीय.
     </div>
   </div>
   <div class="col-lg-3"></div>
@@ -229,13 +241,26 @@
   <div class="col-lg-6" align="center">
    <div class="alert alert-dismissable alert-warning">
     <button type="button" class="close" data-dismiss="alert">×</button>
-    <strong><span id="no-word"></span></strong> not found. If this is valid, please contact us -
+    <strong><span id="no-word"></span></strong> not found.If this is valid, please contact us-
     <a href="mailto:narasimhayya@gmail.com" rel="nofollow">Sri Narasimhayya Bhat</a> or
     <a href="mailto:sriki77@gmail.com" rel="nofollow">Srikanth Seshadri</a> ; 
-    we will be happy to add it for you.
+    we will be happy to add it for you.<br/>
+    पदम् सङ्ग्रहे नास्ति| पदम् सिद्द अस्ति चेत् अस्मभ्यं कथयतु| वयं संतोषेण पदं योजयिष्याम:|
   </div>
 </div>
 <div class="col-lg-3"></div>
+</div>
+
+<div id="lakara-heading-row" class="row">
+  <div class="col-lg-3"></div>
+  <div class="col-lg-6" align="center">
+   <h4 class="text-danger" id="lakara-heading"><span id="dhatu-name"></span> रूपाणि</h4>
+ </div>
+ <div class="col-lg-3"></div>
+</div>
+
+<div id="spacing-row" class="row">
+  <div class="col-lg-12">&nbsp;</div>
 </div>
 
 
