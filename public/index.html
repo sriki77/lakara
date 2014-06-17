@@ -114,7 +114,7 @@
          hidePanels(); 
          $('#search-progress').show();
          var word = $('#word').val();
-         $.getJSON("roopa.json?r="+word,
+         $.getJSON("http://lakara.herokuapp.com/roopa.json?r="+word,
           function(data){
             if(data.roopa){
               renderDesc(data);
@@ -152,7 +152,7 @@
 
       <div id="navbar-main" class="navbar-collapse collapse" style="padding-top: 17px;">
        <div class="nav navbar-nav" align="center">
-         अन्वेषणीय धातुरूपाणि  सङ्ग्रह
+         दश लकारेषु  धतुरूपाणि 
        </div>
        <ul class="nav navbar-nav navbar-right">
         <button id="about" class="btn btn-danger" rel="popover" 
@@ -171,10 +171,10 @@
       <div class="row">
        <div class="jumbotron">
         <h2>धातुरूपाणि</h2>
-        संकृतभषायां प्रायेण 2200 धातव: (roots) सन्ति | तेषाम एकैकस्यापि धातो: दश: लकारा: (tenses and moods) संभवन्ति | तेषु षट् लकारा: कालवाचका: (tenses) चत्वार: प्रकरबोधका: (moods) |<br/>
-        षट् कालवाचका: - लट् , लृट् , लुङ् , लुट, लङ्, लिट् | <br/>
+        संकृतभाषायां प्रायेण 2200 धातव: (roots) सन्ति |  तेषु एकैकस्यापि धातो: दश: लकारा: (tenses and moods) सम्भवन्ति| षट् लकारा: कालवाचका: (tenses) चत्वार: प्रकरबोधका: (moods) |
+        षट् कालवाचका: - लट् , लृट् , लुङ् , लुट, लङ्, लिट् |
         चत्वार: प्रकरबोधका: - लोट् , विधिलिङ् , आशिर्लिङ् , लृङ् | <br/>
-        तेषाम एकैकस्यापि लकारस्य स्थाने पृथक् पुरुषप्रत्यया: भवन्ति | पुरुषाश्च त्रय: सन्ति - प्रथमपुरुष:(third person), मध्यमपुरुष:(second person), उत्तमपुरुष:(first person) | <br/>
+        धातो: तिङ् प्रत्ययानां योजनेन तिङ्न्तरूपाणि सिध्यन्ति| पुरुषाश्च त्रय: सन्ति - प्रथमपुरुष:(third person), मध्यमपुरुष:(second person), उत्तमपुरुष:(first person) |
         पुरुषाणां  प्रत्येकं  त्रीणि वचनानि विद्यन्ते - एकवचनम्(singular), द्विवचनम्(dual), बहुवचनम(plural)| <br/><br/>
         एतत्  अन्वेषणीय धातुरूपाणि सङ्ग्रह | यदि भवान अध:स्थ अन्वेषिके(search box) पदं (word) ददाति तर्हि दत्त पदस्य सम्पूर्ण धातुरूपाणि निर्देशा:(details) उत्पन्नं भवति |
       </div>
