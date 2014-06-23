@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Padam.create!([{name: 'परस्मैपदम्'},{name: 'आत्मनेपदम्'}]);
+Padam.create!([{name: 'परस्मैपदी'},{name: 'आत्मनेपदी'}]);
 Vachanam.create!([{name: 'एकवचनम्'},{name: 'द्विवचनम्'},{name: 'बहुवचनम'}]);
 Purusha.create!([{name: 'प्रथमपुरुष:'},{name: 'मध्यमपुरुष:'},{name: 'उत्तमपुरुष:'}]);
 Lakaras.create!([{name: 'लट्'},{name: 'लिट्'},{name: 'लुट'},{name: 'लृट्'},{name: 'लोट्'},
