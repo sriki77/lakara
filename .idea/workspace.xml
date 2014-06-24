@@ -15,8 +15,8 @@
     <SUITE FILE_PATH="coverage/lakara@Roopa_Retrievals_should_suppor_only_JSON_format___lakara.coverage" NAME="Roopa Retrievals should suppor only JSON format : lakara Coverage Results" MODIFIED="1394257220555" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="lakara" />
     <SUITE FILE_PATH="coverage/lakara@Roopa_Create_roopa_of_different_types_and_validate__lakara.coverage" NAME="Roopa Create roopa of different types and validate: lakara Coverage Results" MODIFIED="1393941522313" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="lakara" />
     <SUITE FILE_PATH="coverage/lakara@Roopa_Retrievals_should_return_JSON_for_lat_lakara__lakara.coverage" NAME="Roopa Retrievals should return JSON for lat lakara: lakara Coverage Results" MODIFIED="1396239629692" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="lakara" />
-    <SUITE FILE_PATH="coverage/lakara@UsersController__lakara.coverage" NAME="UsersController: lakara Coverage Results" MODIFIED="1394805640178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="lakara" />
     <SUITE FILE_PATH="coverage/lakara@RoopasController_Validate_Roopas_Show_Action_should_return_roopas_description_and_details__lakara.coverage" NAME="RoopasController Validate Roopas Show Action should return roopas description and details: lakara Coverage Results" MODIFIED="1394245823834" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="lakara" />
+    <SUITE FILE_PATH="coverage/lakara@UsersController__lakara.coverage" NAME="UsersController: lakara Coverage Results" MODIFIED="1394805640178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="lakara" />
     <SUITE FILE_PATH="coverage/lakara@UsersController_When_input_is_invalid__lakara.coverage" NAME="UsersController When input is invalid: lakara Coverage Results" MODIFIED="1393665740479" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="lakara" />
     <SUITE FILE_PATH="coverage/lakara@UsersController_When_Insufficient_information_should_return_403_for_missing_user_handle__lakara.coverage" NAME="UsersController When Insufficient information should return 403 for missing user handle: lakara Coverage Results" MODIFIED="1393664975055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="lakara" />
     <SUITE FILE_PATH="coverage/lakara@Dhatu_Create_dhatus_of_different_types_and_validate__lakara.coverage" NAME="Dhatu Create dhatus of different types and validate: lakara Coverage Results" MODIFIED="1394356750046" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="lakara" />
@@ -52,10 +52,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="seeds.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/seeds.rb">
+      <file leaf-file-name="roopa_mgmt_spec.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/spec/requests/roopa_mgmt_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="1" selection-start="216" selection-end="216" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
+            <state line="37" column="0" selection-start="1150" selection-end="1150" vertical-scroll-proportion="0.5923159" vertical-offset="0" max-vertical-offset="937">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="factories.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spec/factories.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="34" selection-start="481" selection-end="481" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1725">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.json.jbuilder" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/roopas/show.json.jbuilder">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="52" selection-start="131" selection-end="131" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="510">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application_helper.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/helpers/application_helper.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="15" selection-start="35" selection-end="40" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
               <folding />
             </state>
           </provider>
@@ -64,7 +91,7 @@
       <file leaf-file-name="20140304134117_create_roopas.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/migrate/20140304134117_create_roopas.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="110" selection-start="614" selection-end="720" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
+            <state line="14" column="110" selection-start="614" selection-end="720" vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="345">
               <folding />
             </state>
           </provider>
@@ -82,16 +109,16 @@
       <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="30" selection-start="392" selection-end="392" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="960">
+            <state line="15" column="30" selection-start="392" selection-end="392" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="960">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="20140624040556_padam.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="20140624040556_padam.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/migrate/20140624040556_padam.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="71" selection-start="182" selection-end="182" vertical-scroll-proportion="0.032017075" vertical-offset="0" max-vertical-offset="937">
+            <state line="4" column="0" selection-start="188" selection-end="188" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="150">
               <folding />
             </state>
           </provider>
@@ -100,7 +127,7 @@
       <file leaf-file-name="Rakefile" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Rakefile">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="0" selection-start="278" selection-end="278" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
+            <state line="9" column="0" selection-start="278" selection-end="278" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="225">
               <folding />
             </state>
           </provider>
@@ -125,7 +152,6 @@
         <option value="$PROJECT_DIR$/db/migrate/20140310013440_seed_padams_vachanam_lakara_purusha.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20140310013440_seed_data.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20140310014824_seed_data.rb" />
-        <option value="$PROJECT_DIR$/spec/factories.rb" />
         <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20140304134117_create_roopas.rb" />
         <option value="$PROJECT_DIR$/.travis.yml" />
@@ -165,8 +191,9 @@
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/app/helpers/application_helper.rb" />
         <option value="$PROJECT_DIR$/db/seeds.rb" />
-        <option value="$PROJECT_DIR$/spec/requests/roopa_mgmt_spec.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20140624040556_padam.rb" />
+        <option value="$PROJECT_DIR$/spec/factories.rb" />
+        <option value="$PROJECT_DIR$/spec/requests/roopa_mgmt_spec.rb" />
       </list>
     </option>
   </component>
@@ -209,6 +236,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -401,7 +429,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="RailsProjectView" />
     </panes>
   </component>
@@ -794,7 +821,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17358893" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17518637" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -802,12 +829,12 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.58492976" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32915717" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -826,9 +853,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25772098" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41230068" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41230068" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -875,11 +902,6 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="732" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spec/factories.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="5" selection-start="627" selection-end="627" vertical-scroll-proportion="1.1616162" vertical-offset="30" max-vertical-offset="1725" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/schema.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.8282828" vertical-offset="543" max-vertical-offset="1275" />
@@ -913,11 +935,6 @@
     <entry file="file://$PROJECT_DIR$/app/views/sessions/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="0" selection-start="659" selection-end="659" vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="450" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/roopas/show.json.jbuilder">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="3" selection-start="827" selection-end="827" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/dhatus/show.html.erb">
@@ -987,9 +1004,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1290">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1290" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
@@ -1014,16 +1029,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/database.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="20" selection-start="589" selection-end="589" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990">
-          <folding />
-        </state>
+        <state line="22" column="20" selection-start="589" selection-end="589" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/application.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/dhatus/edit.html.erb">
@@ -1031,91 +1042,49 @@
         <state line="6" column="96" selection-start="340" selection-end="340" vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="900" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/application_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="14" selection-start="39" selection-end="39" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spec/controllers/users_controller_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="51" selection-start="733" selection-end="733" vertical-scroll-proportion="0.40021345" vertical-offset="0" max-vertical-offset="1005">
-          <folding />
-        </state>
+        <state line="25" column="51" selection-start="733" selection-end="733" vertical-scroll-proportion="0.40021345" vertical-offset="0" max-vertical-offset="1005" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/controllers/roopas_controller_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="7" selection-start="742" selection-end="742" vertical-scroll-proportion="0.41622198" vertical-offset="0" max-vertical-offset="937">
-          <folding />
-        </state>
+        <state line="26" column="7" selection-start="742" selection-end="742" vertical-scroll-proportion="0.41622198" vertical-offset="0" max-vertical-offset="937" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/models/dhatu_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="935">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="935" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/models/lakaras_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="935">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="935" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/models/padam_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="935">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="935" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/models/purusha_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="935">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="935" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/models/roopa_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="935">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="935" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/models/vachanam_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="935">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/requests/roopa_mgmt_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="75" selection-start="602" selection-end="602" vertical-scroll-proportion="0.35218784" vertical-offset="0" max-vertical-offset="937">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="935" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="30" selection-start="392" selection-end="392" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="960">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Rakefile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="278" selection-end="278" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/seeds.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="1" selection-start="216" selection-end="216" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
           <folding />
         </state>
       </provider>
@@ -1136,7 +1105,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20140624040556_padam.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="71" selection-start="182" selection-end="182" vertical-scroll-proportion="0.032017075" vertical-offset="0" max-vertical-offset="937">
+        <state line="4" column="0" selection-start="188" selection-end="188" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/roopas/show.json.jbuilder">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="52" selection-start="131" selection-end="131" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Rakefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="278" selection-end="278" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/seeds.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="111" selection-start="861" selection-end="861" vertical-scroll-proportion="0.19693655" vertical-offset="0" max-vertical-offset="914">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/factories.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="34" selection-start="481" selection-end="481" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1725">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/application_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="15" selection-start="35" selection-end="40" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/requests/roopa_mgmt_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="0" selection-start="1150" selection-end="1150" vertical-scroll-proportion="0.5923159" vertical-offset="0" max-vertical-offset="937">
           <folding />
         </state>
       </provider>

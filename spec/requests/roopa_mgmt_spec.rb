@@ -21,7 +21,7 @@ describe "Roopa Retrievals" do
   it "should return JSON for lat lakara" do
     get "/roopa", {:r => 'भवति', :format => :json}
     response.body.should include('"roopa":"भवति","desc":"भू धातु, परस्मैपदी"')
-    response.body.should include('लट् लाकर:, प्रथमपुरुष:, एकवचनम्"')
+    response.body.should include('लट् लकार:, प्रथमपुरुष:, एकवचनम्"')
   end
 
 

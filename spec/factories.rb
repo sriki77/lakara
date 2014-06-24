@@ -55,12 +55,12 @@ FactoryGirl.define do
   end
 
   factory :p_padam, class: Padam do
-    name "परस्मैपदम्"
+    name "परस्मैपदी"
     initialize_with { Padam.find_by_name(name)}
   end
 
   factory :a_padam, class: Padam do
-    name "आत्मनेपदम्"
+    name "आत्मनेपदी"
     initialize_with { Padam.find_by_name(name)}
   end
 
