@@ -24,6 +24,29 @@ describe "Roopa Retrievals" do
     response.body.should include('लट् लकार:, प्रथमपुरुष:, एकवचनम्"')
   end
 
+  it "should return JSON for lot lakara" do
+    get "/roopa", {:r => 'bhava', :format => :json}
+    p response.body
+    response.body.should include('"roopa":"bhava/bhavatat","desc":"भू धातु, परस्मैपदी"')
+    response.body.should include('लोट् लकार:, मध्यमपुरुष:, एकवचनम्"')
+    get "/roopa", {:r => 'bhavatat', :format => :json}
+    p response
+    response.body.should include('"roopa":"bhava/bhavatat","desc":"भू धातु, परस्मैपदी"')
+    response.body.should include('लोट् लकार:, मध्यमपुरुष:, एकवचनम्"')
+  end
+
+
+  it "should return JSON for lot lakara again" do
+    get "/roopa", {:r => 'abhava', :format => :json}
+    p response
+    response.body.should include('"roopa":"abhava / bh/ abhavatat","desc":"भू धातु, परस्मैपदी"')
+    response.body.should include('लोट् लकार:, मध्यमपुरुष:, एकवचनम्"')
+    get "/roopa", {:r => 'bh', :format => :json}
+    p response
+    response.body.should include('"roopa":"abhava / bh/ abhavatat","desc":"भू धातु, परस्मैपदी"')
+    response.body.should include('लोट् लकार:, मध्यमपुरुष:, एकवचनम्"')
+  end
+
 
 end
 #Padam.create!([{name: 'परस्मैपदम्'},{name: 'आत्मनेपदम्'}]);

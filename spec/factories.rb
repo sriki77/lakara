@@ -29,7 +29,8 @@ FactoryGirl.define do
     name "भू"
     association :padam, factory: :p_padam, strategy: :build
     after(:build) do |d|
-      d.roopas = [FactoryGirl.build(:bhava_roopa), FactoryGirl.build(:bhavata_roopa)]
+      d.roopas = [FactoryGirl.build(:bhava_roopa),
+                  FactoryGirl.build(:bhavata_roopa),FactoryGirl.build(:bhavatat_roopa),FactoryGirl.build(:bh_roopa)]
     end
   end
 
@@ -46,6 +47,21 @@ FactoryGirl.define do
     association :vachanam, factory: :bahu_vachana, strategy: :build
     association :purusha, factory: :m_purusha, strategy: :build
   end
+
+  factory :bhavatat_roopa, class: Roopa do
+    name "bhava/bhavatat"
+    association :lakaras, factory: :lot_lakara, strategy: :build
+    association :vachanam, factory: :yeka_vachana, strategy: :build
+    association :purusha, factory: :m_purusha, strategy: :build
+  end
+
+  factory :bh_roopa, class: Roopa do
+    name "abhava / bh/ abhavatat"
+    association :lakaras, factory: :lot_lakara, strategy: :build
+    association :vachanam, factory: :yeka_vachana, strategy: :build
+    association :purusha, factory: :m_purusha, strategy: :build
+  end
+
 
   factory :moda_roopa, class: Roopa do
     name "मोदते"

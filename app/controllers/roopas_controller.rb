@@ -6,6 +6,17 @@ class RoopasController < ApplicationController
     name=params[:r]
     unless name.blank?
       @roopa = Roopa.includes(:dhatu,:purusha,:vachanam,:lakaras).where(:name => name.strip)
+      if @roopa.empty?
+        candidates = Roopa.includes(:dhatu,:purusha,:vachanam,:lakaras).where("name LIKE ?", "%#{name}%")
+
+        unless candidates.empty?
+          candidates.each do |r|
+            r.name.split(/\//).each{ |s|
+              @roopa << r if s.strip == name.strip
+            }
+          end
+          end
+      end
     end
     respond_to do |f|
       f.json
