@@ -65,7 +65,14 @@
           var word = $('#word').val().trim();
           var row='<tr>'; var bold=true;
           $.each(data, function(key,val){
-            if(word==val){
+              var parts=val.split("/");
+              var part='';
+              for (i=0;i<parts.length;++i) {
+                  if (word.trim() === parts[i].trim()){
+                      part=parts[i];
+                  }
+              };
+            if(part!==''){
               row+='<td><span class="text-primary"><strong>'+val+'</strong></span></td>';
             }else{
               if(bold){
@@ -116,7 +123,7 @@
          hidePanels(); 
          $('#search-progress').show();
          var word = $('#word').val();
-         $.getJSON("http://lakara.herokuapp.com/roopa.json?r="+word,
+         $.getJSON("roopa.json?r="+word,
           function(data){
             if(data.roopa){
               renderDesc(data);
