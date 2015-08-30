@@ -1,3 +1,24 @@
+<script>
+    $(document).ready(function () {
+        var count = <%=@allLakaras.length%>;
+        for (i = 0; i < count; ++i) {
+            var tCount = $("#totalCount" + i).val();
+            var text = "";
+            for (j = 0; j < tCount; ++j) {
+                text += $(".v" + i + j).val() + ',';
+            }
+            $("#enter-all-text" + i).val(text);
+        }
+    });
+
+    function hideTextArea(i) {
+        var text = $("#enter-all-text" + i).val();
+        var values = text.split(",");
+        for (j = 0; j < values.length; ++j) {
+            $(".v" + i + j).val(values[j]);
+        }
+    }
+</script>
 <%= link_to 'Cancel', dhatus_path %>
 <%= form_for :dhatu, url: dhatu_path(@dhatu), :method => :patch do |d| %>
     <div align="center">
@@ -24,20 +45,42 @@
                         <td align="center"><i> <%= v.name %></i></td>
                     <% end %>
                   </tr>
+                  <% count=0 %>
                   <% @allPurushas.each do |p| %>
                       <tr>
                         <td align="center"><i><%= p.name %></i></td>
                         <% @allVachanas.each do |v| %>
                             <td align="center">
                               <% r=@dhatu.roopas.find { |r| r.lakaras==l && r.purusha==p && r.vachanam==v } %>
-                              <input name="dhatu[edit_roopas][<%= r.id %>][name]" size="10" type="text" value="<%= r.name %>"/>
+                              <input name="dhatu[edit_roopas][<%= r.id %>][name]" size="10" type="text" value="<%= r.name %>" class="v<%= i %><%= count %>"/>
                               <input name="dhatu[edit_roopas][<%= r.id %>][lakaras_id]" type="hidden" value="<%= l.id %>"/>
                               <input name="dhatu[edit_roopas][<%= r.id %>][purusha_id]" type="hidden" value="<%= p.id %>"/>
                               <input name="dhatu[edit_roopas][<%= r.id %>][vachanam_id]" type="hidden" value="<%= v.id %>"/>
                             </td>
+                            <% count+=1 %>
                         <% end %>
                       </tr>
                   <% end %>
+                  <input type="hidden" id="totalCount<%= i %>" value="<%= count %>"/>
+                  <tr>
+                    <td colspan="<%= @allVachanas.length+1 %>" align="center">
+                      <table>
+                        <tr class="enter-all<%= i %>">
+                          <td align="center">Enter comma separated values</td>
+                        </tr>
+                        <tr class="enter-all<%= i %>">
+                          <td align="center">
+                            <textarea id="enter-all-text<%= i %>" cols="50" rows="3" style="font-size: 20pt;"></textarea>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td align="center">
+                            <input id="update<%= i %>" type="button" value="Update" onclick="hideTextArea(<%=i%>)"/>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
                 </table>
               </td>
               <% if (i+1)%2==0 %>
