@@ -20,18 +20,18 @@ describe "Roopa Retrievals" do
 
   it "should return JSON for lat lakara" do
     get "/roopa", {:r => 'भवति', :format => :json}
-    response.body.should include('"roopa":"भवति","desc":"भू धातु, परस्मैपदी"')
+    response.body.should include('"roopa":"भवति","desc":"भू धातुः, परस्मैपदी"')
     response.body.should include('लट् लकार:, प्रथमपुरुष:, एकवचनम्"')
   end
 
   it "should return JSON for lot lakara" do
     get "/roopa", {:r => 'bhava', :format => :json}
     p response.body
-    response.body.should include('"roopa":"bhava/bhavatat","desc":"भू धातु, परस्मैपदी"')
+    response.body.should include('"roopa":"bhava/bhavatat","desc":"भू धातुः, परस्मैपदी"')
     response.body.should include('लोट् लकार:, मध्यमपुरुष:, एकवचनम्"')
     get "/roopa", {:r => 'bhavatat', :format => :json}
     p response
-    response.body.should include('"roopa":"bhava/bhavatat","desc":"भू धातु, परस्मैपदी"')
+    response.body.should include('"roopa":"bhava/bhavatat","desc":"भू धातुः, परस्मैपदी"')
     response.body.should include('लोट् लकार:, मध्यमपुरुष:, एकवचनम्"')
   end
 
@@ -39,11 +39,11 @@ describe "Roopa Retrievals" do
   it "should return JSON for lot lakara again" do
     get "/roopa", {:r => 'abhava', :format => :json}
     p response
-    response.body.should include('"roopa":"abhava / bh/ abhavatat","desc":"भू धातु, परस्मैपदी"')
+    response.body.should include('"roopa":"abhava / bh/ abhavatat","desc":"भू धातुः, परस्मैपदी"')
     response.body.should include('लोट् लकार:, मध्यमपुरुष:, एकवचनम्"')
     get "/roopa", {:r => 'bh', :format => :json}
     p response
-    response.body.should include('"roopa":"abhava / bh/ abhavatat","desc":"भू धातु, परस्मैपदी"')
+    response.body.should include('"roopa":"abhava / bh/ abhavatat","desc":"भू धातुः, परस्मैपदी"')
     response.body.should include('लोट् लकार:, मध्यमपुरुष:, एकवचनम्"')
   end
 
