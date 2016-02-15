@@ -1,4 +1,4 @@
 module ApplicationHelper
   LAKARA="लकार:"
-  DHATU="धातु"
+  DHATU="धातुः"
 end

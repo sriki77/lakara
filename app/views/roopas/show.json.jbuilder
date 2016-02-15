@@ -3,6 +3,7 @@ unless @roopa.empty?
 
   json.roopa @first_roopa.name
   json.desc "#{@first_roopa.dhatu.name} #{ApplicationHelper::DHATU}, #{@first_roopa.dhatu.padam.name}"
+  json.dhatuDesc "#{@first_roopa.dhatu.description}"
 
   matches = []
   @roopa.each do |r|
@@ -20,7 +21,7 @@ unless @roopa.empty?
       row << p.name
       @allVachanas.each do |v|
         r=dhatu.roopas.find { |r| r.lakaras==l && r.purusha==p && r.vachanam==v }
-        row << ( r && r.name ? r.name : "-")
+        row << (r && r.name ? r.name : "-")
       end
       table << row
     end
