@@ -1,0 +1,5 @@
+class UpdateLutLakaraCorrectly < ActiveRecord::Migration
+  def change
+  end
+  execute("UPDATE lakaras SET name='लुट्' WHERE name='लुट';")
+end
