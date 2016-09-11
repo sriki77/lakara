@@ -21,7 +21,7 @@ unless @roopa.empty?
       row << p.name
       @allVachanas.each do |v|
         r=dhatu.roopas.find { |r| r.lakaras==l && r.purusha==p && r.vachanam==v }
-        row << (r && r.name ? r.name : "-")
+        row << (r && r.name ? @roopa_name_map.fetch(r.name,r.name) : "-")
       end
       table << row
     end
