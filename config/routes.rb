@@ -6,6 +6,7 @@ Lakara::Application.routes.draw do
   match 'login', to: 'sessions#create', :via => [:get, :post], as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
   get 'signup', to: 'users#new', as: 'signup'
+  get 'check_dhatu', to: 'dhatus#check'
 
   resources :dhatus
   resources :users

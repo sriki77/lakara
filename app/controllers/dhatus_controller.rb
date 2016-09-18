@@ -1,6 +1,18 @@
 class DhatusController < ApplicationController
   before_filter :authorize, :load_ref_data
 
+
+  def check
+    fieldId = params[:fieldId]
+    dhatu = params[:fieldValue].strip
+    p "Dhatu: #{dhatu}"
+    if Dhatu.exists?(name: dhatu)
+      render :json => [fieldId, false, "एतत् धातु: पूर्वमेव योजितम् आसीत्"], :root => false
+    else
+      render :json => [fieldId, true, ""], :root => false
+    end
+  end
+
   def index
     @dhatus=Dhatu.all
   end

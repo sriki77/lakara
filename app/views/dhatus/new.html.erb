@@ -1,38 +1,40 @@
 <script>
-    $(document).ready(function () {
-        var count = <%=@allLakaras.length%>;
-        for (i = 0; i < count; ++i) {
-            $(".enter-all" + i).hide();
-            $("#update" + i).hide();
-        }
-
-    });
-
-    function showTextArea(i) {
-        $(".enter-all" + i).show();
-        $("#enter-all-button" + i).hide();
-        $("#update" + i).show();
+  $(document).ready(function () {
+    var count = <%=@allLakaras.length%>;
+    for (i = 0; i < count; ++i) {
+      $(".enter-all" + i).hide();
+      $("#update" + i).hide();
     }
+    $("#new_dhatu_form").validationEngine('attach');
+    $("#dhatu-name").validationEngine('showPrompt', 'धातु: नामं अपेक्षित:', 'error', true);
+  });
 
-    function hideTextArea(i) {
-        $(".enter-all" + i).hide();
-        $("#enter-all-button" + i).show();
-        $("#update" + i).hide();
-        var text = $("#enter-all-text" + i).val();
-        var values = text.split(",");
-        for (j = 0; j < values.length; ++j) {
-            $(".v" + i+j).val(values[j]);
-        }
+  function showTextArea(i) {
+    $(".enter-all" + i).show();
+    $("#enter-all-button" + i).hide();
+    $("#update" + i).show();
+  }
+
+  function hideTextArea(i) {
+    $(".enter-all" + i).hide();
+    $("#enter-all-button" + i).show();
+    $("#update" + i).hide();
+    var text = $("#enter-all-text" + i).val();
+    var values = text.split(",");
+    for (j = 0; j < values.length; ++j) {
+      $(".v" + i + j).val(values[j]);
     }
+  }
 </script>
 <div id="header" align="center">
   <%= link_to 'Cancel', dhatus_path %>
-  <%= form_for :dhatu, url: dhatus_path do |d| %>
+  <%= form_for :dhatu, url: dhatus_path, :html => {:id => "new_dhatu_form"} do |d| %>
       <div align="center">
         <table cellpadding="5" width="90%" border="0">
           <tr>
             <th align="center" colspan="3">
-              <font size="+5"><%= d.text_field :name, :maxlength => 10 %> <%= ApplicationHelper::DHATU %></font>
+              <font size="+5"><%= d.text_field :name, :maxlength => 10, :class => "validate[required,ajax[ajaxDhatuCheck]] text-input",
+                                               "data-errormessage-value-missing"=>"  धातु: नामम् अपेक्षित: , कृपया ददातु"  %> <%= ApplicationHelper::DHATU %></font>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <%= d.collection_select(:padam_id, Padam.all, :id, :name) %>
             </th>
