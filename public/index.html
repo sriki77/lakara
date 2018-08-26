@@ -1,309 +1,337 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>लकारा:</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>लकारा:</title>
 
-	<!-- Bootstrap -->
-	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-      <![endif]-->
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
 
-      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-      <!-- Include all compiled plugins (below), or include individual files as needed -->
-      <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
 
-      
-      <script type="text/javascript">
-        $(document).ready(function(){
 
-          function hidePanels(){
-            $('#search-progress').hide();
-            $('#result-desc-row').hide();
-            $('#result-error-row').hide();
-            $('#result-warning-row').hide();
-            $('#lakara-heading-row').hide();
-            $('#result-tables').hide();
-          };
+    <script type="text/javascript">
+        $(document).ready(function () {
 
-          function renderDesc(data){
-           $('#result-desc').text(data.roopa);
-           $('#dhatu-name').text(data.desc);
-           $('#result-matches').empty();
-           $('#result-matches').append('<li class="list-group-item text-success">'+ data.desc+',  '+data.dhatuDesc+'</li>');
-           renderMatches(data);
-           $('#result-desc-row').show(); 
-           $('#lakara-heading-row').show();
-           $('#result-tables').show();
-         }
+            function hidePanels() {
+                $('#search-progress').hide();
+                $('#result-desc-row').hide();
+                $('#result-error-row').hide();
+                $('#result-warning-row').hide();
+                $('#lakara-heading-row').hide();
+                $('#result-tables').hide();
+            };
 
-         function renderMatches(data){
-          $.each(data.matches, function(key,val){
-            $('#result-matches').append('<li class="list-group-item text-success">'+ val+'</li>');
-          });
-        }
-
-        function renderTableHeader(table,data){
-          var row='<thead><tr>';
-          $.each(data, function(key,val){
-            row+='<th>'+val+'</th>';
-          });
-          row += '</tr></thead>';
-          $(table).append(row);
-        }
-
-        function renderTableBodyRow(table,data){
-          var word = $('#word').val().trim();
-          var row='<tr>'; var bold=true;
-          $.each(data, function(key,val){
-              var parts=val.split("/");
-              var part='';
-              for (i=0;i<parts.length;++i) {
-                  if (word.trim() === parts[i].trim()){
-                      part=parts[i];
-                  }
-              };
-            if(part!==''){
-              row+='<td><span class="text-primary"><strong>'+val+'</strong></span></td>';
-            }else{
-              if(bold){
-                row+='<td><b>'+val+'</b></td>';
-                bold=false;
-              }else{
-                row+='<td>'+val+'</td>';
-              }
+            function renderDesc(data) {
+                $('#result-desc').text(data.roopa);
+                $('#result-matches').empty();
+                $.each(data.dhatus, function (i, val) {
+                    $('#result-matches').append('<li class="list-group-item text-success">' + val.desc + ',  ' + val.dhatuDesc + '</li>');
+                    renderMatches(val);
+                });
+                $('#result-desc-row').show();
+                $('#lakara-heading-row').show();
+                $('#result-tables').show();
             }
 
-          });
-          row += '</tr>';
-          $(table).append(row);
-        }
-
-        function renderTableBody(table,data){
-          $(table).append('<tbody></tbody>');
-          $.each(data, function(key,val){
-            renderTableBodyRow(table +' tbody',val)
-          });
-        }
-
-        function renderTable(row,tableno,data){
-         $('#'+row)
-         .append('<div class="col-lg-4"><div class="table-responsive">'
-          +'<table class="table " id="table'+tableno+'"><caption class="text-danger">'
-          +data.name+'</caption></table></div></div>');
-         renderTableHeader('#'+row+' #table'+tableno,data.table[0]);
-         renderTableBody('#'+row+' #table'+tableno,data.table.slice(1));
-       }
-
-       function renderTables(data){
-         var rowId='#result-tables';
-         $(rowId).empty();
-         $.each(data.lakaras, function(key,val){
-          if(key%3===0){
-            rowId='row-'+key;
-            $('#result-tables').append('<div id="'+rowId+'"class="row"></div');
-          }
-          renderTable(rowId,key,val);
-        });
-       }
-
-       hidePanels();
-
-
-       $('#searchButton').on('click', function(event) {
-         hidePanels(); 
-         $('#search-progress').show();
-         var word = $('#word').val();
-         $.getJSON("roopa.json?r="+word,
-          function(data){
-            if(data.roopa){
-              renderDesc(data);
-              renderTables(data);
-            }else{
-              $('#no-word').text(word);
-              $('#result-warning-row').show();
+            function renderMatches(data) {
+                $.each(data.matches, function (key, val) {
+                    $('#result-matches').append('<li class="list-group-item text-info"><i class="fa fa-arrow-circle-right"></i> ' + val + '</li>');
+                });
             }
-          }).always(function(){
-            $('#search-progress').hide();
-          }).fail(function(jqxhr, textStatus, error){
-            $('#result-error-row').show();
-          });
+
+            function renderTableHeader(table, data) {
+                var row = '<thead><tr>';
+                $.each(data, function (key, val) {
+                    row += '<th>' + val + '</th>';
+                });
+                row += '</tr></thead>';
+                $(table).append(row);
+            }
+
+            function renderTableBodyRow(table, data) {
+                var word = $('#word').val().trim();
+                var row = '<tr>';
+                var bold = true;
+                $.each(data, function (key, val) {
+                    var parts = val.split("/");
+                    var part = '';
+                    for (i = 0; i < parts.length; ++i) {
+                        if (word.trim() === parts[i].trim()) {
+                            part = parts[i];
+                        }
+                    }
+                    if (part !== '') {
+                        row += '<td><span class="text-primary"><strong>' + val + '</strong></span></td>';
+                    } else {
+                        if (bold) {
+                            row += '<td><b>' + val + '</b></td>';
+                            bold = false;
+                        } else {
+                            row += '<td>' + val + '</td>';
+                        }
+                    }
+
+                });
+                row += '</tr>';
+                $(table).append(row);
+            }
+
+            function renderTableBody(table, data) {
+                $(table).append('<tbody></tbody>');
+                $.each(data, function (key, val) {
+                    renderTableBodyRow(table + ' tbody', val)
+                });
+            }
+
+            function renderTable(row, tableno, data) {
+                $('#' + row)
+                    .append('<div class="col-lg-4"><div class="table-responsive">'
+                        + '<table class="table " id="table' + tableno + '"><caption class="text-danger">'
+                        + data.name + '</caption></table></div></div>');
+                renderTableHeader('#' + row + ' #table' + tableno, data.table[0]);
+                renderTableBody('#' + row + ' #table' + tableno, data.table.slice(1));
+            }
+
+
+
+            function renderTables(data) {
+                var rowId = '#result-tables';
+                $(rowId).empty();
+                var start = 0;
+                $.each(data.dhatus, function (i, val) {
+                        $('#result-tables').append( '<div class="row">'
+                            + '<div class="col-lg-12 bg-secondary">'
+                            + '<ul class="list-group">' +
+                            '<li class="list-group-item text-secondary text-center"><h5 class="text-info">'+val.desc+ ',  ' + val.dhatuDesc
+                            +'</h5></li></ul></div> '
+                            +'</div>'
+                            + '<div id="spacing-row" class="row">' +
+                            '<div class="col-lg-12">&nbsp;</div>' +
+                            '</div>');
+
+
+                    $.each(val.lakaras, function (key, val) {
+                        key = start + key;
+                        if (key % 3 === 0) {
+                            rowId = 'row-' + key;
+                            $('#result-tables').append('<div id="' + rowId + '"class="row"></div');
+                        }
+                        renderTable(rowId, key, val);
+                    });
+                    start += 12;
+                });
+            }
+
+            hidePanels();
+
+
+            $('#searchButton').on('click', function (event) {
+                hidePanels();
+                $('#search-progress').show();
+                var word = $('#word').val();
+                $.getJSON("roopa.json?r=" + word,
+                    function (data) {
+                        if (data.roopa) {
+                            renderDesc(data);
+                            renderTables(data);
+                        } else {
+                            $('#no-word').text(word);
+                            $('#result-warning-row').show();
+                        }
+                    }).always(function () {
+                    $('#search-progress').hide();
+                }).fail(function (jqxhr, textStatus, error) {
+                    $('#result-error-row').show();
+                });
+            });
+
+            $(function () {
+                $("#about").popover({html: true});
+            });
+
+
         });
-
-       $(function ()  
-        { $("#about").popover({ html : true });  
-      });  
+    </script>
+</head>
 
 
-     });
-   </script>
- </head>
+<body>
+<section id="navigation-bar">
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <div class="navbar-brand">
+                    लकारा:
+                </div>
+            </div>
 
-
- <body>
-  <section id="navigation-bar">
-   <div class="navbar navbar-default navbar-fixed-top">
-     <div class="container">
-       <div class="navbar-header">
-        <div class="navbar-brand">
-          लकारा: 
-        </div>
-      </div>
-
-      <div id="navbar-main" class="navbar-collapse collapse" style="padding-top: 17px;">
-       <div class="nav navbar-nav" align="center">
-         दश लकारेषु धातुरूपाणि
-       </div>
-       <ul class="nav navbar-nav navbar-right">
-        <button id="about" class="btn btn-danger" rel="popover" 
-        data-content="<p class='panel-body'><em>Concept, Idea &amp; Content of Dr Narasimhayya Bhat,
+            <div id="navbar-main" class="navbar-collapse collapse" style="padding-top: 17px;">
+                <div class="nav navbar-nav" align="center">
+                    दश लकारेषु धातुरूपाणि
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <button id="about" class="btn btn-danger" rel="popover"
+                            data-content="<p class='panel-body'><em>Concept, Idea &amp; Content of Dr Narasimhayya Bhat,
         Dr. Jagadeesh Bhat.<br/> Management By Sri. Seshu Durbaka<br/> Implemented by Srikanth Seshadri.</em></p>"
-        data-placement="auto" data-container="body" data-toggle="popover"
-        data-original-title="Lakara">About</button>  
-      </ul>
-    </div>
+                            data-placement="auto" data-container="body" data-toggle="popover"
+                            data-original-title="Lakara">About
+                    </button>
+                </ul>
+            </div>
 
-  </div>
-</div>
-</div>
+        </div>
+    </div>
+    </div>
 </section>
 <section id="Introduction">
-  <div class="container">
-      <div class="row">
-       <div class="jumbotron">
-        <h2>धातुरूपाणि</h2>
-        संस्कृतभाषायां प्रायेण 2200 धातव: (roots) सन्ति |  तेषु एकैकस्यापि धातो: दश लकारा: (tenses and moods) सम्भवन्ति| षट् लकारा: कालवाचका: (tenses) चत्वार: प्रकरबोधका: (moods) |
-        षट् कालवाचका: - लट् , लृट् , लुङ् , लुट, लङ्, लिट् |
-        चत्वार: प्रकरबोधका: - लोट् , विधिलिङ् , आशिर्लिङ् , लृङ् | 
-        धातो: तिङ् प्रत्ययानां योजनेन तिङ्न्तरूपाणि सिध्यन्ति| पुरुषाश्च त्रय: सन्ति - प्रथमपुरुष:(third person), मध्यमपुरुष:(second person), उत्तमपुरुष:(first person) |
-        त्रीणि वचनानि विद्यन्ते - एकवचनम्(singular), द्विवचनम्(dual), बहुवचनम्(plural)| <br/> <br/>
-        <div align="center"> धातु: + विकरणप्रत्यय: + तिङ्प्रत्यय: =  तिङन्तम् </div> <br/>
-        यदि अत्र अन्वेषणस्थले(search box) तिङन्त पदस्य उट्टङ्कनं(type) क्रियते तर्हि तस्य अन्यानि सर्वाणि रूपाणि आगच्छन्ति|
-      </div>
-    </div>
+    <div class="container">
+        <div class="row">
+            <div class="jumbotron">
+                <h2>धातुरूपाणि</h2>
+                संस्कृतभाषायां प्रायेण 2200 धातव: (roots) सन्ति | तेषु एकैकस्यापि धातो: दश लकारा: (tenses and moods)
+                सम्भवन्ति| षट् लकारा: कालवाचका: (tenses) चत्वार: प्रकरबोधका: (moods) |
+                षट् कालवाचका: - लट् , लृट् , लुङ् , लुट, लङ्, लिट् |
+                चत्वार: प्रकरबोधका: - लोट् , विधिलिङ् , आशिर्लिङ् , लृङ् |
+                धातो: तिङ् प्रत्ययानां योजनेन तिङ्न्तरूपाणि सिध्यन्ति| पुरुषाश्च त्रय: सन्ति - प्रथमपुरुष:(third
+                person), मध्यमपुरुष:(second person), उत्तमपुरुष:(first person) |
+                त्रीणि वचनानि विद्यन्ते - एकवचनम्(singular), द्विवचनम्(dual), बहुवचनम्(plural)| <br/> <br/>
+                <div align="center"> धातु: + विकरणप्रत्यय: + तिङ्प्रत्यय: = तिङन्तम्</div>
+                <br/>
+                यदि अत्र अन्वेषणस्थले(search box) तिङन्त पदस्य उट्टङ्कनं(type) क्रियते तर्हि तस्य अन्यानि सर्वाणि रूपाणि
+                आगच्छन्ति|
+            </div>
+        </div>
 </section>
 <section id="word-search">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-3"></div>
-      <div class="col-lg-6">
-       Please enter the word (पदम्)
-       <div class="input-group">
-         <input class="form-control input-lg" id="word" type="text" value="भवति " />
-         <span class="input-group-btn">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+                Please enter the word (पदम्)
+                <div class="input-group">
+                    <input class="form-control input-lg" id="word" type="text" value="भवति "/>
+                    <span class="input-group-btn">
           <button id="searchButton" class="btn btn-primary btn-lg" type="button">Search/अन्वेषणम्</button>
         </span>
-      </div>
-      <span class="help-block"><small>Please input word in Devanagiri script using the <a href="http://www.google.co.in/inputtools/" rel="nofollow">Google Input Tools Plugin</a> or any other tools of your choice.</small>
+                </div>
+                <span class="help-block"><small>Please input word in Devanagiri script using the <a
+                        href="http://www.google.co.in/inputtools/" rel="nofollow">Google Input Tools Plugin</a> or any other tools of your choice.</small>
       </span>
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
     </div>
-    <div class="col-lg-3"></div>
-  </div>
-</div>
-<div class="container">
-  <div class="row">
-    <div class="col-lg-4"></div>
-    <div class="col-lg-4"> <div id="search-progress" class="progress progress-striped active">
-      <div class="progress-bar progress-bar-success" style="width: 100%"> Fetching data/आहरणम् </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                <div id="search-progress" class="progress progress-striped active">
+                    <div class="progress-bar progress-bar-success" style="width: 100%"> Fetching data/आहरणम्</div>
+                </div>
+            </div>
+            <div class="col-lg-4"></div>
+        </div>
     </div>
-  </div>
-  <div class="col-lg-4"></div>
-</div>
-</div>
-</div>
+    </div>
 </section>
 <section id="word-search-result">
-  <div class="container">
-    <div id="result-desc-row" class="row">
-      <div class="col-lg-3"></div>
-      <div class="col-lg-6">
-       <h4 class="text-info" id="result-desc"></h4>
-       <ul id="result-matches" class="list-group"></ul>
-     </div>
-     <div class="col-lg-3"></div>
-   </div>
-   
+    <div class="container">
+        <div id="result-desc-row" class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+                <h4 class="text-info" id="result-desc"></h4>
+                <ul id="result-matches" class="list-group"></ul>
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
 
 
-   <div id="result-error-row" class="row">
-    <div class="col-lg-3"></div>
-    <div class="col-lg-6" align="center">
-     <div class="alert alert-dismissable alert-danger">
-      <button type="button" class="close" data-dismiss="alert">×</button>
-      <strong>Oh snap!</strong> Error occurred seaching and try submitting again.
-      <br/>समस्या अभवत्,पुन: अन्वेषणीयम्|
+        <div id="result-error-row" class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6" align="center">
+                <div class="alert alert-dismissable alert-danger">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>Oh snap!</strong> Error occurred seaching and try submitting again.
+                    <br/>समस्या अभवत्,पुन: अन्वेषणीयम्|
+                </div>
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+
+
+        <div id="result-warning-row" class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6" align="center">
+                <div class="alert alert-dismissable alert-warning">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong><span id="no-word"></span></strong> not found.If this is valid, please contact us-
+                    <a href="mailto:narasimhayya@gmail.com" rel="nofollow">Sri Narasimhayya Bhat</a> or
+                    <a href="mailto:bhatguntgaru@gmail.com" rel="nofollow">Dr. Jagadeesh Bhat</a> or
+                    <a href="mailto:dseshu@gmail.com" rel="nofollow">Sri. Seshu Durbaka</a> or
+                    <a href="mailto:sriki77@gmail.com" rel="nofollow">Srikanth Seshadri</a> ;
+                    we will be happy to add it for you.<br/>
+                    पदमिदं नैव योजितम् | योजनक्रिया प्रचलन्ती अस्ति | युष्माकम् अभिप्रायं सूचनां च सगौरवं स्वीकरिष्याम:|
+                </div>
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+
+        <div id="lakara-heading-row" class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6" align="center">
+                <h4 class="text-danger" id="lakara-heading"><span id="dhatu-name"></span></h4>
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+
+        <div id="spacing-row" class="row">
+            <div class="col-lg-12">&nbsp;</div>
+        </div>
+
+
+        <div id="result-tables">
+        </div>
     </div>
-  </div>
-  <div class="col-lg-3"></div>
-</div>
-
-
-<div id="result-warning-row" class="row">
-  <div class="col-lg-3"></div>
-  <div class="col-lg-6" align="center">
-   <div class="alert alert-dismissable alert-warning">
-    <button type="button" class="close" data-dismiss="alert">×</button>
-    <strong><span id="no-word"></span></strong> not found.If this is valid, please contact us-
-    <a href="mailto:narasimhayya@gmail.com" rel="nofollow">Sri Narasimhayya Bhat</a> or
-       <a href="mailto:bhatguntgaru@gmail.com" rel="nofollow">Dr. Jagadeesh Bhat</a>  or
-       <a href="mailto:dseshu@gmail.com" rel="nofollow">Sri. Seshu Durbaka</a> or
-    <a href="mailto:sriki77@gmail.com" rel="nofollow">Srikanth Seshadri</a> ; 
-    we will be happy to add it for you.<br/>
-    पदमिदं नैव योजितम् | योजनक्रिया प्रचलन्ती अस्ति | युष्माकम् अभिप्रायं सूचनां च सगौरवं स्वीकरिष्याम:|
-  </div>
-</div>
-<div class="col-lg-3"></div>
-</div>
-
-<div id="lakara-heading-row" class="row">
-  <div class="col-lg-3"></div>
-  <div class="col-lg-6" align="center">
-   <h4 class="text-danger" id="lakara-heading"><span id="dhatu-name"></span></h4>
- </div>
- <div class="col-lg-3"></div>
-</div>
-
-<div id="spacing-row" class="row">
-  <div class="col-lg-12">&nbsp;</div>
-</div>
-
-
-
-<div  id="result-tables">
-</div>
-</div>
 </section>
 <section id="footer">
-  <div class="page-header"></div>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="col-lg-12">
-          <ul class="list-unstyled">
-            <li class="pull-right"><a href="#top">Back to top</a></li>
-          </ul>
-          <p> Concept, Idea &amp; Content of <a href="mailto:narasimhayya@gmail.com" rel="nofollow">Dr Narasimhayya Bhat</a>
-              and <a href="mailto:bhatguntgaru@gmail.com" rel="nofollow">Dr. Jagadeesh Bhat</a>.
-              <br/> Management By  <a href="mailto:dseshu@gmail.com" rel="nofollow">Sri. Seshu Durbaka</a>.
-              <br/> Implemented by <a href="mailto:sriki77@gmail.com" rel="nofollow">Srikanth Seshadri</a>.
-             </p>
-            <p>Code released under the <a href="https://github.com/sriki77/lakara/blob/gh-pages/LICENSE">MIT License</a>.
-             Based on <a href="http://getbootstrap.com" rel="nofollow">Bootstrap</a>. 
-             Using <a href="http://bootswatch.com/journal/" rel="nofollow">Bootswatch Journal Theme</a>. </p>
+    <div class="page-header"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="col-lg-12">
+                    <ul class="list-unstyled">
+                        <li class="pull-right"><a href="#top">Back to top</a></li>
+                    </ul>
+                    <p> Concept, Idea &amp; Content of <a href="mailto:narasimhayya@gmail.com" rel="nofollow">Dr
+                        Narasimhayya Bhat</a>
+                        and <a href="mailto:bhatguntgaru@gmail.com" rel="nofollow">Dr. Jagadeesh Bhat</a>.
+                        <br/> Management By <a href="mailto:dseshu@gmail.com" rel="nofollow">Sri. Seshu Durbaka</a>.
+                        <br/> Implemented by <a href="mailto:sriki77@gmail.com" rel="nofollow">Srikanth Seshadri</a>.
+                    </p>
+                    <p>Code released under the <a href="https://github.com/sriki77/lakara/blob/gh-pages/LICENSE">MIT
+                        License</a>.
+                        Based on <a href="http://getbootstrap.com" rel="nofollow">Bootstrap</a>.
+                        Using <a href="http://bootswatch.com/journal/" rel="nofollow">Bootswatch Journal Theme</a>. </p>
 
-           </div>
-         </div>
-       </div>
-     </div>
-   </section>
- </body>
- </html>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160215110711) do
+ActiveRecord::Schema.define(version: 20180825062554) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,7 +22,14 @@ ActiveRecord::Schema.define(version: 20160215110711) do
     t.integer  "padam_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "aadi",        default: ""
+    t.string   "pratyaya",    default: ""
+    t.string   "karma",       default: ""
+    t.string   "sait",        default: ""
+    t.string   "meaning",     default: ""
   end
+
+  add_index "dhatus", ["name", "padam_id"], name: "dhatus_name_padam_idx", unique: true, using: :btree
 
   create_table "lakaras", force: true do |t|
     t.string   "name",       null: false
